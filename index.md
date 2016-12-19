@@ -9,4 +9,6 @@ function fancyAlert(arg) {
 }
 ```
 
+[caffe安装](caffe.md)
+
 ![Image of Yaktocat](image/yaktocat.png)
