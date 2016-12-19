@@ -92,7 +92,7 @@ $ bin/hdfs dfs -get output output
 $ cat output/*
 ```
   
- 8. When you’re done, stop the daemons with:
+8. When you’re done, stop the daemons with:
  
 ```shell
 $ sbin/stop-dfs.sh
