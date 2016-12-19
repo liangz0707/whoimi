@@ -66,7 +66,7 @@ $ bin/hdfs namenode -format
 
 ```shell
 
-  $ sbin/start-dfs.sh
+$ sbin/start-dfs.sh
   
  ```
  
@@ -77,8 +77,8 @@ NameNode - http://localhost:50070/
 
 ```shell
 
-  $ bin/hdfs dfs -mkdir /user
-  $ bin/hdfs dfs -mkdir /user/<username>
+$ bin/hdfs dfs -mkdir /user
+$ bin/hdfs dfs -mkdir /user/<username>
   
  ```
 
@@ -86,7 +86,7 @@ NameNode - http://localhost:50070/
 
 ```shell
 
-  $ bin/hdfs dfs -put etc/hadoop input
+$ bin/hdfs dfs -put etc/hadoop input
   
  ```
 
@@ -94,15 +94,15 @@ NameNode - http://localhost:50070/
 
 ```shell
 
-  $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
+$ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
   
 ```
 7. Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
 
 ```shell
 
-  $ bin/hdfs dfs -get output output
-  $ cat output/*
+$ bin/hdfs dfs -get output output
+$ cat output/*
   
   ```
   
@@ -110,7 +110,7 @@ NameNode - http://localhost:50070/
  
 ```shell
 
-  $ sbin/stop-dfs.sh
+$ sbin/stop-dfs.sh
   
  ```
   
@@ -119,9 +119,9 @@ NameNode - http://localhost:50070/
   
   编写map reduce文件
   
-  ```java
+```java
   
- import java.io.IOException;
+import java.io.IOException;
 import java.util.StringTokenizer;
 
 import org.apache.hadoop.conf.Configuration;
@@ -177,16 +177,16 @@ public class WordCount {
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   }
 }
- ```
+```
  
  制作成jar包
  
-  ```shell
+```shell
   
 $ bin/hadoop com.sun.tools.javac.Main WordCount.java
 $ jar cf wc.jar WordCount*.class
 
- ```
+```
  
 启动hdfs并将文件提交到hdfs中:参考HDFS
 
