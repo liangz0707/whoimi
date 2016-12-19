@@ -32,23 +32,23 @@ etc/hadoop/hdfs-site.xml:
         <value>1</value>
     </property>
 </configuration>
+
 ```
  
 完成以上两个配置文件尝试进行ssh链接
 
-```shell
 
-  $ ssh localhost
-  
+```shell
+$ ssh localhost
+
 ```
 
 使用下面的命令进行无密码ssh链接:
 
 ```shell
-
-  $ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
-  $ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
-  $ chmod 0600 ~/.ssh/authorized_keys
+$ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
+$ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
+$ chmod 0600 ~/.ssh/authorized_keys
   
 ```
 
@@ -58,7 +58,7 @@ etc/hadoop/hdfs-site.xml:
 
 ```shell
 
-  $ bin/hdfs namenode -format
+$ bin/hdfs namenode -format
   
 ```
 
