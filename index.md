@@ -12,6 +12,12 @@ function fancyAlert(arg) {
 [caffe安装](caffe.md)
 
 [在python当中使用](blogs/use_c_in_python.md)
+
+[在重写QWidget类过程中遇到的问题](blogs/qt_qa_1.md)
+
+[MakeFiles基本使用指南](blogs/learn_makefile.md)
+
+[](blogs/learn_mongodb.md)
 ![Image of Yaktocat](image/yaktocat.png)
 
 
