@@ -21,6 +21,7 @@ etc/hadoop/core-site.xml:
 </configuration>
 
 ```
+
 etc/hadoop/hdfs-site.xml:
 
 ```xml
