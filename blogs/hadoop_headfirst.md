@@ -52,14 +52,11 @@ $ chmod 0600 ~/.ssh/authorized_keys
   
 ```
 
-  确保可以无密码链接
- 
 1. Format the filesystem:
 
 ```shell
+$bin/hdfs namenode -format
 
-$ bin/hdfs namenode -format
-  
 ```
 
 2. Start NameNode daemon and DataNode daemon:
@@ -67,7 +64,7 @@ $ bin/hdfs namenode -format
 ```shell
 
 $ sbin/start-dfs.sh
-  ```
+```
  
 3. 在浏览器中查看NameNode
 NameNode - http://localhost:50070/
@@ -87,7 +84,7 @@ $ bin/hdfs dfs -mkdir /user/<username>
 
 $ bin/hdfs dfs -put etc/hadoop input
   
- ```
+```
 
 6. Run some of the examples provided:
 
@@ -98,17 +95,14 @@ $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep
 7. Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
 
 ```shell
-
 $ bin/hdfs dfs -get output output
 $ cat output/*
 ```
   
  8. When you’re done, stop the daemons with:
- 
 ```shell
-
 $ sbin/stop-dfs.sh
-  
+
 ```
   
   ## MapReduce
@@ -315,34 +309,5 @@ hadoop dfsadmin -setBalancerBandwidth 1000
 
 [back](../index.md)
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
