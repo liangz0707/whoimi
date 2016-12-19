@@ -21,6 +21,8 @@ function fancyAlert(arg) {
 
 [c语言tips](blogs/some_c_tips.md)
 
+[hadoop基本使用](blogs/hadoop_headfirst.md)
+
 ![Image of Yaktocat](image/yaktocat.png)
 
 
