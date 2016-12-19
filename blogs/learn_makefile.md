@@ -83,7 +83,7 @@ hello
 有时候我们会使用不同的‘target’。因为当我们修改了一个文件的时候，不希望把所有的文件都进行重新编译。
 
 例如以下的例子：
-```
+```makefiles
 all: hello
 hello: main.o factorial.o hello.o     
     g++ main.o factorial.o hello.o -o hello
