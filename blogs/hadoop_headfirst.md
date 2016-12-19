@@ -284,7 +284,6 @@ hadoop fs -text /user/hadoop/a.txt
 hadoop fs -copyFromLocal localsrc dst 与hadoop fs -put功能类似。
 hadoop fs -moveFromLocal localsrc dst 将本地文件上传到hdfs，同时删除本地文件。
 
-
 hadoop dfsadmin -report
 hadoop dfsadmin -safemode enter | leave | get | wait
 hadoop dfsadmin -setBalancerBandwidth 1000
