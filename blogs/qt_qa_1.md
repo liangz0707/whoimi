@@ -2,11 +2,13 @@
 在对样式进行改进的过程中遇到了两个问题：
 1. signals明明已经声明了，但是提示：
 
-```c
+```shell
 error LNK2019: 无法解析的外部符号 "public: void __cdecl QMyWidget::mouseMoveSignal()
+```
+
 QMyWidget是我自己重写的QWidget，主要为了实现一些特别的功能，mouseMoveSignal是我写的信号。
 在执行emit mouseMoveSignal()时，发生了错误，这个错误主要是由于，在手动书写代码的时候漏掉了Q_OBJECT的声明。
-```
+
 
 代码片段如下：
 
