@@ -1,10 +1,14 @@
-#介绍caffe的安装过程
+# 介绍caffe的安装过程
 
 > 首先需要从github上clone最新的代码
+
 > 官方提到的安装方式有两种：cmake和make两种方式
+
 > 建议使用官方方式，因为使用example的时候不太一样
 
 [Github Caffe](https://github.com/BVLC/caffe)
+
+
 [Caffe 官方网站](http://caffe.berkeleyvision.org/)
 
 在安装的过程当中遇到了两种问题
