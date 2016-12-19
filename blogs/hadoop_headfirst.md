@@ -32,8 +32,7 @@ etc/hadoop/hdfs-site.xml:
         <value>1</value>
     </property>
 </configuration>
-
- ```
+```
  
 完成以上两个配置文件尝试进行ssh链接
 
