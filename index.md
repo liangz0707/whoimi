@@ -9,4 +9,4 @@ function fancyAlert(arg) {
 }
 ```
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](image/yaktocat.png)
