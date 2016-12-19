@@ -10,6 +10,7 @@
 在下面的配置文件中配置HDFS:
 
 etc/hadoop/core-site.xml:
+
 ```xml
 <configuration>
     <property>
@@ -19,6 +20,7 @@ etc/hadoop/core-site.xml:
 </configuration>
 ```
 etc/hadoop/hdfs-site.xml:
+
 ```xml
 <configuration>
     <property>
@@ -27,11 +29,15 @@ etc/hadoop/hdfs-site.xml:
     </property>
 </configuration>
  ```
+ 
 完成以上两个配置文件尝试进行ssh链接
+
 ```shell
   $ ssh localhost
 ```
+
 使用下面的命令进行无密码ssh链接:
+
 ```shell
   $ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
   $ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
@@ -40,11 +46,13 @@ etc/hadoop/hdfs-site.xml:
   确保可以无密码链接
  
 1. Format the filesystem:
+
 ```shell
   $ bin/hdfs namenode -format
 ```
 
 2. Start NameNode daemon and DataNode daemon:
+
 ```shell
   $ sbin/start-dfs.sh
  ```
@@ -52,26 +60,31 @@ etc/hadoop/hdfs-site.xml:
 NameNode - http://localhost:50070/
 
 4. 创建目录
+
 ```shell
   $ bin/hdfs dfs -mkdir /user
   $ bin/hdfs dfs -mkdir /user/<username>
  ```
 
 5. 将文件拷贝到HDFS文件系统:
+
 ```shell
   $ bin/hdfs dfs -put etc/hadoop input
  ```
 
 6. Run some of the examples provided:
+
 ```shell
   $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
 ```
 7. Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
+
 ```shell
   $ bin/hdfs dfs -get output output
   $ cat output/*
   ```
  8. When you’re done, stop the daemons with:
+ 
 ```shell
   $ sbin/stop-dfs.sh
  ```
@@ -141,6 +154,7 @@ public class WordCount {
  ```
  
  制作成jar包
+ 
   ```shell
 $ bin/hadoop com.sun.tools.javac.Main WordCount.java
 $ jar cf wc.jar WordCount*.class
@@ -149,11 +163,13 @@ $ jar cf wc.jar WordCount*.class
 启动hdfs并将文件提交到hdfs中:参考HDFS
 
 执行程序：
+
 ```shell
 bin/hadoop jar wc.jar WordCount /user/liangz14/input /user/liangz14/output
 ```
 
 查看结果
+
 ```shell
 bin/hadoop fs -cat /user/joe/wordcount/output/part-r-00000`
 ```
@@ -170,11 +186,17 @@ combine和reducer的作用一样 设置的方法：  job.setCombinerClass(IntSum
 ###  MAIN方法中的设置
 #### Mapper ：
 通过Job.setMapperClass(Class) 设置map 
+
 map的结果通过context.write(WritableComparable, Writable).进行收集
+
 之后会根据比较器进行分组： Job.setGroupingComparatorClass(Class).
+
 之后map的结果救回被排序 并被划分给不同的reducer，划分任务的个数和reduce任务的个数一样
+
 可以制定那个key进入那个Reducer：通过实现客户自定义的划分器
+
 用户可以选择是有使用一个结合器 Job.setCombinerClass(Class)，来实现中间结果的本地聚合，可以减少数据传输的总量（从Mapper到Reducer）
+
 中间结果总是会进行排序，根据：key的长度，key，值的长度，值。可以控制是否压缩，如何压缩。
 
 #### Maps的数量：
