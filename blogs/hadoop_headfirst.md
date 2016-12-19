@@ -67,8 +67,7 @@ $ bin/hdfs namenode -format
 ```shell
 
 $ sbin/start-dfs.sh
-  
- ```
+  ```
  
 3. 在浏览器中查看NameNode
 NameNode - http://localhost:50070/
@@ -79,8 +78,8 @@ NameNode - http://localhost:50070/
 
 $ bin/hdfs dfs -mkdir /user
 $ bin/hdfs dfs -mkdir /user/<username>
-  
- ```
+ 
+```
 
 5. 将文件拷贝到HDFS文件系统:
 
@@ -93,7 +92,6 @@ $ bin/hdfs dfs -put etc/hadoop input
 6. Run some of the examples provided:
 
 ```shell
-
 $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
   
 ```
@@ -103,8 +101,7 @@ $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep
 
 $ bin/hdfs dfs -get output output
 $ cat output/*
-  
-  ```
+```
   
  8. When you’re done, stop the daemons with:
  
@@ -112,7 +109,7 @@ $ cat output/*
 
 $ sbin/stop-dfs.sh
   
- ```
+```
   
   ## MapReduce
   
