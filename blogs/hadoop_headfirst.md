@@ -12,27 +12,23 @@
 etc/hadoop/core-site.xml:
 
 ```xml
-
 <configuration>
     <property>
         <name>fs.defaultFS</name>
         <value>hdfs://localhost:9000</value>
     </property>
 </configuration>
-
 ```
 
 etc/hadoop/hdfs-site.xml:
 
 ```xml
-
 <configuration>
     <property>
         <name>dfs.replication</name>
         <value>1</value>
     </property>
 </configuration>
-
 ```
  
 完成以上两个配置文件尝试进行ssh链接
@@ -40,7 +36,6 @@ etc/hadoop/hdfs-site.xml:
 
 ```shell
 $ ssh localhost
-
 ```
 
 使用下面的命令进行无密码ssh链接:
@@ -164,40 +159,31 @@ public class WordCount {
 制作成jar包
  
 ```shell
-  
 $ bin/hadoop com.sun.tools.javac.Main WordCount.java
 $ jar cf wc.jar WordCount*.class
-
 ```
- 
+
 启动hdfs并将文件提交到hdfs中:参考HDFS
 
 执行程序：
 
 ```shell
-
 bin/hadoop jar wc.jar WordCount /user/liangz14/input /user/liangz14/output
-
 ```
 
 查看结果
 
 ```shell
-
 bin/hadoop fs -cat /user/joe/wordcount/output/part-r-00000`
-
 ```
-
 -libjars, -files and -archives: 参数的使用  分别用来制定jar包，指定文件，和未解压文件 通过#也可以致命具体解压后的文件名
 ，不同参数之间用‘’，‘分割
 
 ### mr的一般过程
 
 ```xml
-
 (input) <k1, v1> -> map -> <k2, v2> -> combine -> <k2, v2> -> reduce -> <k3, v3> (output)
 combine和reducer的作用一样 设置的方法：  job.setCombinerClass(IntSumReducer.class);
-
 ```
 
 ###  MAIN方法中的设置
@@ -217,9 +203,11 @@ map的结果通过context.write(WritableComparable, Writable).进行收集
 中间结果总是会进行排序，根据：key的长度，key，值的长度，值。可以控制是否压缩，如何压缩。
 
 #### Maps的数量：
- 有输入数据的总数决定。输入文件的总的块数
- maps的数量最好为每个节点10到100  经过设置到了每个cpu最多300
- Configuration.set(MRJobConfig.NUM_MAPS, int) 可以进行设置
+有输入数据的总数决定。输入文件的总的块数
+
+maps的数量最好为每个节点10到100  经过设置到了每个cpu最多300
+
+Configuration.set(MRJobConfig.NUM_MAPS, int) 可以进行设置
  
 #### Mapper细节：
 
@@ -238,17 +226,21 @@ map可以通过RawComparator 控制分组和排序
 通过 CompressionCodec控制压缩
 
 #### Reducer：
- Reducer将中间结果（有共同的key）装换成一个更小的值的集合
- Job.setNumReduceTasks(int).来设置reduce的数量
+Reducer将中间结果（有共同的key）装换成一个更小的值的集合
+ 
+Job.setNumReduceTasks(int).来设置reduce的数量
+ 
 Job.setReducerClass(Class) 来对reduce进行设置
-每一个 \<key, (list of values)\>都会调用一次
-Reducer有三个主要的阶段shuffle, sort and reduce.
 
+每一个 \<key, (list of values)\>都会调用一次
+
+Reducer有三个主要的阶段shuffle, sort and reduce.
 
 #### Shuffle：
 框架从所有Mapper的排序结果中获取相关的划分
 
 Sort：框架通过key将Reducer的输入进行分组，因为不同的mapper可能有相同key的输出   
+
 Job.setSortComparatorClass(Class).可以生命子集的规则，指定如何分组
 
 Reduce：每一个key都会执行一个reduce，这个结果会通过Context.write写入到文件系统中。
@@ -258,27 +250,27 @@ Reduce的输出结果是没有经过排序的
 Recude的个数 0.95 *  节点数 * 节点最大容器数 - 1.75 * ...
 
 #### Partitioner
- 用来将key空间进行划分，最终划分的总数和reduce任务的总数是一样的
- HashPartitioner是默认的划分器
+用来将key空间进行划分，最终划分的总数和reduce任务的总数是一样的
+HashPartitioner是默认的划分器
  
 #### Counter
- 计数器时统计工具，M R都能用来统计
+计数器时统计工具，M R都能用来统计
  
 Hadoop MapReduce comes bundled with a library of generally useful mappers, reducers, and partitioners.
+
 Hadoop的MR 是由一系列的 M  R 和P操作库 组成的
 
 #### JOB设置
- Mapper, combiner (if any), Partitioner, Reducer, InputFormat, OutputFormat implementations
- 其中FileInputFormat设置输入文件的集合路径
- FileOutputFormat设置输出路径
- 
- 
+Mapper, combiner (if any), Partitioner, Reducer, InputFormat, OutputFormat implementations
+
+其中FileInputFormat设置输入文件的集合路径
+
+FileOutputFormat设置输出路径
+
+## HDFS常用命令
   
-  ## HDFS常用命令
-  
-  ```shell
-  
-  hadoop fs -ls /
+```shell
+hadoop fs -ls /
 hadoop fs -lsr
 hadoop fs -mkdir /user/hadoop
 hadoop fs -put a.txt /user/hadoop/
