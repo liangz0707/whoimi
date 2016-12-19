@@ -11,4 +11,7 @@ function fancyAlert(arg) {
 
 [caffe安装](caffe.md)
 
+[在python当中使用](blogs/use_c_in_python.md)
 ![Image of Yaktocat](image/yaktocat.png)
+
+
