@@ -49,20 +49,17 @@ $ ssh localhost
 $ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
 $ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
 $ chmod 0600 ~/.ssh/authorized_keys
-  
 ```
 
 1. Format the filesystem:
 
 ```shell
 $bin/hdfs namenode -format
-
 ```
 
 2. Start NameNode daemon and DataNode daemon:
 
 ```shell
-
 $ sbin/start-dfs.sh
 ```
  
@@ -72,26 +69,22 @@ NameNode - http://localhost:50070/
 4. 创建目录
 
 ```shell
-
 $ bin/hdfs dfs -mkdir /user
 $ bin/hdfs dfs -mkdir /user/<username>
- 
 ```
 
 5. 将文件拷贝到HDFS文件系统:
 
 ```shell
-
 $ bin/hdfs dfs -put etc/hadoop input
-  
 ```
 
 6. Run some of the examples provided:
 
 ```shell
 $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
-  
 ```
+
 7. Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
 
 ```shell
@@ -100,18 +93,16 @@ $ cat output/*
 ```
   
  8. When you’re done, stop the daemons with:
+ 
 ```shell
 $ sbin/stop-dfs.sh
-
 ```
   
-  ## MapReduce
+## MapReduce
   
-  
-  编写map reduce文件
+编写map reduce文件
   
 ```java
-  
 import java.io.IOException;
 import java.util.StringTokenizer;
 
@@ -170,7 +161,7 @@ public class WordCount {
 }
 ```
  
- 制作成jar包
+制作成jar包
  
 ```shell
   
