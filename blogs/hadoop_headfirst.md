@@ -19,6 +19,7 @@ etc/hadoop/core-site.xml:
         <value>hdfs://localhost:9000</value>
     </property>
 </configuration>
+
 ```
 etc/hadoop/hdfs-site.xml:
 
@@ -30,6 +31,7 @@ etc/hadoop/hdfs-site.xml:
         <value>1</value>
     </property>
 </configuration>
+
  ```
  
 完成以上两个配置文件尝试进行ssh链接
@@ -37,6 +39,7 @@ etc/hadoop/hdfs-site.xml:
 ```shell
 
   $ ssh localhost
+  
 ```
 
 使用下面的命令进行无密码ssh链接:
@@ -46,7 +49,9 @@ etc/hadoop/hdfs-site.xml:
   $ ssh-keygen -t dsa -P '' -f ~/.ssh/id_dsa
   $ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
   $ chmod 0600 ~/.ssh/authorized_keys
+  
 ```
+
   确保可以无密码链接
  
 1. Format the filesystem:
@@ -54,6 +59,7 @@ etc/hadoop/hdfs-site.xml:
 ```shell
 
   $ bin/hdfs namenode -format
+  
 ```
 
 2. Start NameNode daemon and DataNode daemon:
@@ -61,7 +67,9 @@ etc/hadoop/hdfs-site.xml:
 ```shell
 
   $ sbin/start-dfs.sh
+  
  ```
+ 
 3. 在浏览器中查看NameNode
 NameNode - http://localhost:50070/
 
@@ -71,6 +79,7 @@ NameNode - http://localhost:50070/
 
   $ bin/hdfs dfs -mkdir /user
   $ bin/hdfs dfs -mkdir /user/<username>
+  
  ```
 
 5. 将文件拷贝到HDFS文件系统:
@@ -78,6 +87,7 @@ NameNode - http://localhost:50070/
 ```shell
 
   $ bin/hdfs dfs -put etc/hadoop input
+  
  ```
 
 6. Run some of the examples provided:
@@ -85,17 +95,23 @@ NameNode - http://localhost:50070/
 ```shell
 
   $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.2.jar grep input output 'dfs[a-z.]+'
+  
 ```
 7. Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them:
 
 ```shell
+
   $ bin/hdfs dfs -get output output
   $ cat output/*
+  
   ```
+  
  8. When you’re done, stop the daemons with:
  
 ```shell
+
   $ sbin/stop-dfs.sh
+  
  ```
   
   ## MapReduce
@@ -169,6 +185,7 @@ public class WordCount {
   
 $ bin/hadoop com.sun.tools.javac.Main WordCount.java
 $ jar cf wc.jar WordCount*.class
+
  ```
  
 启动hdfs并将文件提交到hdfs中:参考HDFS
@@ -178,6 +195,7 @@ $ jar cf wc.jar WordCount*.class
 ```shell
 
 bin/hadoop jar wc.jar WordCount /user/liangz14/input /user/liangz14/output
+
 ```
 
 查看结果
@@ -185,7 +203,9 @@ bin/hadoop jar wc.jar WordCount /user/liangz14/input /user/liangz14/output
 ```shell
 
 bin/hadoop fs -cat /user/joe/wordcount/output/part-r-00000`
+
 ```
+
 -libjars, -files and -archives: 参数的使用  分别用来制定jar包，指定文件，和未解压文件 通过#也可以致命具体解压后的文件名
 ，不同参数之间用‘’，‘分割
 
@@ -195,6 +215,7 @@ bin/hadoop fs -cat /user/joe/wordcount/output/part-r-00000`
 
 (input) <k1, v1> -> map -> <k2, v2> -> combine -> <k2, v2> -> reduce -> <k3, v3> (output)
 combine和reducer的作用一样 设置的方法：  job.setCombinerClass(IntSumReducer.class);
+
 ```
 
 ###  MAIN方法中的设置
