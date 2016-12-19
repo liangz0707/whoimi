@@ -17,7 +17,10 @@ function fancyAlert(arg) {
 
 [MakeFiles基本使用指南](blogs/learn_makefile.md)
 
-[](blogs/learn_mongodb.md)
+[mongodb安装](blogs/learn_mongodb.md)
+
+[c语言tips](blogs/some_c_tips.md)
+
 ![Image of Yaktocat](image/yaktocat.png)
 
 
