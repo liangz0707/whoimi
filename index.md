@@ -3,9 +3,10 @@ i try to wirite a blog in a jupyter notebook
 
 ```javascript
 function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
+    interesting_num = 430
+    if(arg) {
+        $.facebox({div:'#foo'})
+    }
 }
 ```
 
