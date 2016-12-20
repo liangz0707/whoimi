@@ -21,6 +21,7 @@ Blob(const vector<int>& shape);
 ```
 
 除了通过构造函数能够决定内存空间的大小外，也可以通过成员函数
+
 ```c
 void Reshape(const int num, const int channels, const int height, const int width);
 void Reshape(const vector<int>& shape);
@@ -28,6 +29,7 @@ void Reshape(const BlobShape& shape);
 ```
 
 需要保存的内容主要是三种：前向计算的输入，后向计算的梯度和尺寸大小。这些内容保存在SynceMemory当中，通过智能指针shared_ptr管理。同时count_表示总大小
+
 ```c
 shared_ptr<SyncedMemory> data_;
 shared_ptr<SyncedMemory> diff_;
@@ -37,6 +39,7 @@ int capacity_;//表示当前所申请空间的大小，如果count_>capacity_则
 ```
 
 在reshape当中如果尺寸变大，则需要重新申请空间
+
 ```c
 //shape_ 是vector<int>成员变量,shape
 if (!shape_data_ || shape_data_->size() < shape.size() * sizeof(int)) {
@@ -51,6 +54,7 @@ if (count_ > capacity_) {
 ```
 
 上面的内容主要是申请空间，然后通过以下方法访问数据。
+
 ```c
 data_->gpu_data();
 data_->cpu_data();
@@ -59,6 +63,7 @@ data_->mutable_cpu_data();
 ```
 
 其中还有两个重要的方法，使用了google的格式.proto，这个随后再看。
+
 ```c
 template <typename Dtype> void Blob<Dtype>::FromProto(const BlobProto& proto, bool reshape)
 template <> void Blob<double>::ToProto(BlobProto* proto, bool write_diff)
