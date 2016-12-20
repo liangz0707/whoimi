@@ -3,7 +3,7 @@ i try to wirite a blog in a jupyter notebook
 
 ```javascript
 function fancyAlert(arg) {
-    interesting_num = 380
+    interesting_num = 500
     if(arg) {
         $.facebox({div:'#foo'})
     }
