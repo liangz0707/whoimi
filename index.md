@@ -26,6 +26,8 @@ function fancyAlert(arg) {
 
 [docker基本使用](blogs/docker_headfirst.md)
 
+[caffe源码浅析](blogs/caffe_reader/caffe_index.md)
+
 ![Image of Yaktocat](image/yaktocat.png)
 
 
