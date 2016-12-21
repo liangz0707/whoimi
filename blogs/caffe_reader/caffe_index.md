@@ -8,6 +8,7 @@
 
 ## layer
 
+[layer学习](src_layer_cpp.md)
 
 ## net
 
