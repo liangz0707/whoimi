@@ -10,7 +10,7 @@ function fancyAlert(arg) {
 }
 ```
 
-[游戏行业](blogs/game_index.md)
+[游戏行业](blogs/game/game_index.md)
 
 [caffe安装](caffe.md)
 
