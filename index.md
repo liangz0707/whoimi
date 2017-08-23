@@ -10,6 +10,8 @@ function fancyAlert(arg) {
 }
 ```
 
+[游戏行业](blogs/game_index.md)
+
 [caffe安装](caffe.md)
 
 [在python当中使用](blogs/use_c_in_python.md)
