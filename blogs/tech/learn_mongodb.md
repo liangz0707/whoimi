@@ -22,4 +22,4 @@ mongoimport --db test --collection restaurants --drop --file primer-dataset.json
 
 7. [具体命令参考](https://docs.mongodb.org/getting-started/python/client/)
 
-[back](../index.md)
+[back](../../index.md)

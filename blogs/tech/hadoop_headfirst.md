@@ -289,7 +289,7 @@ hadoop dfsadmin -safemode enter | leave | get | wait
 hadoop dfsadmin -setBalancerBandwidth 1000
 ```
 
-[back](../index.md)
+[back](../../index.md)
 
   
   

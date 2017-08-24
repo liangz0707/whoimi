@@ -117,7 +117,7 @@ docker  kill [name or ID]
 man  docker-run
 ```
 
-[back](../index.md)
+[back](../../index.md)
 
 
 

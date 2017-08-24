@@ -38,4 +38,4 @@ void QMyWidget::paintEvent(QPaintEvent *e){
 
 直接使用这一段代码进行复制即可使用，将QMyWidget改成你对应的类名，并且包含对应的类，就可以解决这一问题。
 
-[back to list](../index.md)
+[back to list](../../index.md)

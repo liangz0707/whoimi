@@ -144,4 +144,4 @@ clean:
 如上所示，使用$(VAR)就可以轻松的访问变量。
 
 
-[back](../index.md)
+[back](../../index.md)
