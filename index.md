@@ -1,14 +1,3 @@
-# Nice Try
-i try to wirite a blog in a jupyter notebook
-
-```javascript
-function fancyAlert(arg) {
-    interesting_num = 500
-    if(arg) {
-        $.facebox({div:'#foo'})
-    }
-}
-```
 
 [游戏行业](blogs/game/game_index.md)
 
@@ -29,9 +18,5 @@ function fancyAlert(arg) {
 [docker基本使用](blogs/docker_headfirst.md)
 
 [caffe源码浅析](blogs/caffe_reader/caffe_index.md)
-
-![Image of Yaktocat](image/yaktocat.png)
-
-
 
 
