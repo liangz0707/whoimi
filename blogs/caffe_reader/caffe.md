@@ -17,7 +17,7 @@
 2. (8 vs .0)这个问题主要是由于，显卡无法容纳batchsize，调小就可以了。
 3. 还有可能提及到libopencv*的错误，这个需要是由于没能够找到合适的opencv，看情况重新编译，或者制定目录即可。
 
-[back to list](index.md)
+[back to list](../../index.md)
 
 
 
