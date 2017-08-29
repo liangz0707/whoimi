@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e2b063d11b5c15499d76b5399555b066ded25069">
+    <title>whoimi by liangz0707</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>whoimi</h1>
+        <h2>A geek blog</h2>
+        <section id="downloads">
+          
+          <a href="http://github.com/liangz0707/whoimi" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <p>在软件开发的过程中需要对QT界面进行调整，主要使用了QSS的样式表，同时为了实现一些特别的功能需要对某些类进行重写。
+在对样式进行改进的过程中遇到了两个问题：</p>
+<ol>
+  <li>signals明明已经声明了，但是提示：</li>
+</ol>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>error LNK2019: 无法解析的外部符号 <span class="s2">"public: void __cdecl QMyWidget::mouseMoveSignal()
+</span></code></pre>
+</div>
+
+<p>QMyWidget是我自己重写的QWidget，主要为了实现一些特别的功能，mouseMoveSignal是我写的信号。
+在执行emit mouseMoveSignal()时，发生了错误，这个错误主要是由于，在手动书写代码的时候漏掉了Q_OBJECT的声明。</p>
+
+<p>代码片段如下：</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">class</span> <span class="n">QMyWidget</span>
+    <span class="n">public</span> <span class="n">QWidget</span>
+<span class="p">{</span>
+    <span class="n">Q_OBJECT</span> <span class="c1">//丢失了这一句会造成上面的错误。
+</span><span class="nl">public:</span>
+    <span class="n">QMyWidget</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+    <span class="n">QMyWidget</span><span class="p">(</span><span class="n">QWidget</span> <span class="o">*</span><span class="p">);</span>
+    <span class="o">~</span><span class="n">QMyWidget</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<ol>
+  <li>在我完成重写了QMyWidget之后，发现我对界面的QSS设置全部失效了。
+此时需要重写新类的paintEvent方法。代码如下：</li>
+</ol>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">QMyWidget</span><span class="o">::</span><span class="n">paintEvent</span><span class="p">(</span><span class="n">QPaintEvent</span> <span class="o">*</span><span class="n">e</span><span class="p">){</span>
+    <span class="n">QStyleOption</span> <span class="n">opt</span><span class="p">;</span>
+    <span class="n">opt</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+    <span class="n">QPainter</span> <span class="n">p</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+    <span class="n">style</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">drawPrimitive</span><span class="p">(</span><span class="n">QStyle</span><span class="o">::</span><span class="n">PE_Widget</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">opt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">,</span> <span class="n">this</span><span class="p">);</span>
+    <span class="n">QWidget</span><span class="o">::</span><span class="n">paintEvent</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>直接使用这一段代码进行复制即可使用，将QMyWidget改成你对应的类名，并且包含对应的类，就可以解决这一问题。</p>
+
+<p><a href="/">back to list</a></p>
+
+      </section>
+    </div>
+
+    
+
+
+    <footer>
+      text footer
+    </footer>
+  </body>
+</html>

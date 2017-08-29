@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e2b063d11b5c15499d76b5399555b066ded25069">
+    <title>whoimi by liangz0707</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>whoimi</h1>
+        <h2>A geek blog</h2>
+        <section id="downloads">
+          
+          <a href="http://github.com/liangz0707/whoimi" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="layercpp">layer.cpp</h1>
+
+<p><a href="/">back</a>
+<a href="/blogs/caffe_reader/caffe_index.html">back to caffe</a></p>
+
+<ol>
+  <li>这一部分的的内容主要了解一下layer是如何构建的。代码当中的解释是：构成网络的基本组件。</li>
+  <li>Layer必须实现的函数包括<strong>Forward</strong>和<strong>Backward</strong>函数。</li>
+  <li>每一个Layer都对应两个Blob(每一个Blob当中有data_ 和diff_两个空间来分别保存数据本身和数据的梯度，具体见blob)。</li>
+  <li>在Forward当中，从bottom blob当中读取输入数据进行当前层定义的计算（卷积、pooling、ReLu等），然后输出到top blob当中。因为caffe网络的定义是从低向上的，所以每一层都是从bottom读取想top输出。</li>
+  <li>Backward层当中，从top blob当中提取数据进行梯度计算，输出到bottom blob当中。</li>
+</ol>
+
+<p>首先来看一下每个layer当中保存的成员变量和成员函数
+第一部分是对于锁的定义。</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">bool</span> <span class="n">is_shared_</span><span class="p">;</span> <span class="c1">//表示是否是一个被多个网络共享的层
+</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">forward_mutex_</span><span class="p">;</span> <span class="c1">//如果一个层是被共享的，则需要一个互斥锁
+</span><span class="kt">void</span> <span class="n">InitMutex</span><span class="p">();</span>
+<span class="kt">void</span> <span class="n">Lock</span><span class="p">();</span>
+<span class="kt">void</span> <span class="n">Unlock</span><span class="p">();</span>
+</code></pre>
+</div>
+<p>下面是对一个layer需要的基本的成员变量，我们要知道top和bottom的blob当中保存的是每一层的输入和输出的数据，而每一层当中的blob是等待学习的参数。对于一个卷积层而言下面代码中vectoer当中的每一个blob都保存的是一个卷积。对于top和bottom的blob都是保存在vector当中的，一个vector表示的是一个batch，一个元素是一个数据。所以top.size应该等于bottom.size。</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">LayerParameter</span> <span class="n">layer_param_</span><span class="p">;</span> <span class="c1">//protobuf结构，保存层的参数
+</span><span class="n">Phase</span> <span class="n">phase_</span><span class="p">;</span> <span class="c1">//记录当前所处的阶段，训练阶段还是测试阶段
+</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">blobs_</span><span class="p">;</span><span class="c1">//记录一系列等待学习的参数
+</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;</span> <span class="n">param_propagate_down_</span><span class="p">;</span> <span class="c1">//记录每一个参数是否需要计算梯度
+</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;</span> <span class="n">loss_</span><span class="p">;</span> <span class="c1">//每个目标函数在top 中是否有非零的权重向量
+</span></code></pre>
+</div>
+<p>在每一次初始化的过程中，需要调用下面的函数对layer进行初始化：</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">SetUp</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;*&gt;&amp;</span> <span class="n">bottom</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;*&gt;&amp;</span> <span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">InitMutex</span><span class="p">();</span> <span class="c1">//初始化互斥锁
+</span>    <span class="n">CheckBlobCounts</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">);</span> <span class="c1">//检查输入输出数据的数量是否匹配
+</span>    <span class="n">LayerSetUp</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">);</span> <span class="c1">//对层做一些设置,目前是一个空函数
+</span>    <span class="n">Reshape</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">);</span><span class="c1">//根据输入输出对每一个训练参数进行大小调整,目前是纯虚函数
+</span>    <span class="n">SetLossWeights</span><span class="p">(</span><span class="n">top</span><span class="p">);</span><span class="c1">//设置误差权重，对呀loss的设置还有一系列的内容，随后再看看
+</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>下面就是最重要的backward和forward,这两个函数中目前已经实现了一个框架负责调用我们自己的实现。我们可以清楚的看到这里前向和后向都分别有gpu和cpu版本，cpu版本目前全部都是纯虚函数，而GPU版本暂时直接调用cpu所以在继承时，cpu版本必须实现而gpu不一定需要实现。</p>
+
+<p>对于被多个网络共享的层使用了锁，为什么反向传播没有使用锁呢？</p>
+
+<p>另外在前向传播当中我注释了loss相关的部分，loss应该是涉及到了误差计算的部分。</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">template</span> <span class="o">&lt;</span><span class="kr">typename</span> <span class="n">Dtype</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="n">Dtype</span> <span class="n">Layer</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;::</span><span class="n">Forward</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;*&gt;&amp;</span> <span class="n">bottom</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;*&gt;&amp;</span> <span class="n">top</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Lock</span><span class="p">();</span> <span class="c1">//加互斥锁
+</span>    <span class="n">Dtype</span> <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">Reshape</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">Caffe</span><span class="o">::</span><span class="n">mode</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">Caffe</span><span class="p">:</span><span class="o">:</span><span class="n">CPU</span><span class="o">:</span>
+            <span class="n">Forward_cpu</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">);</span>
+            <span class="c1">//……loss
+</span>            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">Caffe</span><span class="p">:</span><span class="o">:</span><span class="n">GPU</span><span class="o">:</span>
+          	<span class="n">Forward_gpu</span><span class="p">(</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">);</span>
+    <span class="cp">#ifndef CPU_ONLY
+</span>        <span class="c1">//……loss
+</span>    <span class="cp">#endif
+</span>    <span class="p">}</span>
+    <span class="n">Unlock</span><span class="p">();</span>	<span class="c1">//解锁
+</span>    <span class="k">return</span> <span class="n">loss</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">template</span> <span class="o">&lt;</span><span class="kr">typename</span> <span class="n">Dtype</span><span class="o">&gt;</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">Layer</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;::</span><span class="n">Backward</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;*&gt;&amp;</span> <span class="n">top</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">bool</span><span class="o">&gt;&amp;</span> <span class="n">propagate_down</span><span class="p">,</span>
+      <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Blob</span><span class="o">&lt;</span><span class="n">Dtype</span><span class="o">&gt;*&gt;&amp;</span> <span class="n">bottom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">Caffe</span><span class="o">::</span><span class="n">mode</span><span class="p">())</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">Caffe</span><span class="p">:</span><span class="o">:</span><span class="n">CPU</span><span class="o">:</span>
+            <span class="n">Backward_cpu</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">propagate_down</span><span class="p">,</span> <span class="n">bottom</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="n">Caffe</span><span class="p">:</span><span class="o">:</span><span class="n">GPU</span><span class="o">:</span>
+          	<span class="n">Backward_gpu</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">propagate_down</span><span class="p">,</span> <span class="n">bottom</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+      </section>
+    </div>
+
+    
+
+
+    <footer>
+      text footer
+    </footer>
+  </body>
+</html>
