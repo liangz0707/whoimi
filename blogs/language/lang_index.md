@@ -10,7 +10,7 @@ C++
 
 [windows网络编程](c++/network.md)
 
-[多线程](c++/network.md)
+[多线程](c++/thread.md)
 
 [无锁队列](unlock_queue.md)
 
