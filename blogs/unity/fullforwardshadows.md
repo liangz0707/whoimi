@@ -1,0 +1,13 @@
+在surfaceshader当中涉及到两个和阴影有关的参数：fullforwardshadows和addshadow
+
+详细解释：
+
+1.在前向渲染中surface会编译成forwardbase和forwardadd两个pass，
+
+2.原本的forwardbase当中，默认会对阴影贴图（触发forwardbase的主要直线光对应的阴影）进行采样。如果加上noshadow，在forwardbase阶段也不在对阴影贴图进行采样。
+
+3.在使用fragment shader时，forwardadd pass中需要一个 multi_compile_fwdadd_fullshadow宏来开启对阴影的定义，以对阴影贴图进行正确采样。
+
+4.在surfaceshader当中fullforwardshadows和multi_compile_fwdadd_fullshadow一样。加上后shader的变体多了几个和阴影相关的宏，SHADOWS_SOFT,SHADOWS_CUBE,SHADOW_DEPTH,SHADOWS_SCREEN等等，这些是屏幕阴影采样有关。这个宏并不影响forwardbase（surfaceshader的编译结果）。这个宏对阴影采样有关，所有说只影响forwardadd过程阴影的接收。
+
+5.surface shader的宏：addshadow 的作用是产生shadercaster的pass用来投射阴影，会定义两个宏：SHADOWS_DEPTH:用于生成直线光和探照灯阴影，SHADOW_CUBE：用于生成点光源阴影。这个宏会产生一个shadowcaster所以只影响阴影的投射。他和FallBack 已经自己写的shadow caster是冲突的。
