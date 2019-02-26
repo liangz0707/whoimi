@@ -16,6 +16,12 @@
 
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
 
+[fullforwardshadows](blogs/unity/fullforwardshadows.md)
+
+[Hdrp一些特殊功能](blogs/unity/Hdrp一些特殊功能.md)
+
+[Shaderd打包](blogs/unity/Shaderd打包.md)
+
 ## 杂项
 
 [游戏行业](blogs/game/game_index.md)

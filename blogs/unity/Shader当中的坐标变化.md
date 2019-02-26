@@ -39,3 +39,19 @@ UNITY_MATRIX_M
 ## 6. unity_XX矩阵
 
 shader当中unity_XX（Camera相关）开头的矩阵不一定是当前摄像机矩阵，在官方文档当中也没有提到。
+
+1. 根据实验unity_WorldToCamera 和 UNITY_MATRIX_V 的区别在于：
+
+   而UNITY_MATRIX_V改变了旋向性，第三行z值取反了。
+
+   也就是说unity_WorldToCamera 没有改变旋向性。
+
+2. 这个时候UNITY_MATRIX_P（glstate_matrix_projection）是根据平台特殊处理的矩阵。
+
+而unity_CameraProjcetion是按照正常的流程的的矩阵。
+
+
+
+unity c#的代码中通过 GL.get...接口的到的矩阵等价于UNITY_MATRIX_P（glstate_matrix_projection）：省略旋向性改变。约束y方向、约束z方向。更加复杂。
+
+通过Camera.projectionMatrix得到的是一般投影矩阵unity_CamearaProjection。
