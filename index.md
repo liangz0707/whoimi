@@ -57,6 +57,10 @@
 
 [10.Lighting设置](blogs/HDRPsource/10.Lighting设置.md)
 
+## GPU
+
+[GPU架构基础](blogs/GPUAartch/GPU架构.md)
+
 ## 杂项
 
 [游戏行业](blogs/game/game_index.md)
