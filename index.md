@@ -61,6 +61,8 @@
 
 [GPU架构基础](blogs/GPUAartch/GPU架构.md)
 
+[GPU分支语句性能](blogs/GPUAartch/GPU分支语句性能.md)
+
 ## 杂项
 
 [游戏行业](blogs/game/game_index.md)
