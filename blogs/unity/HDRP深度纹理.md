@@ -18,7 +18,7 @@ HDPR在内置纹理采样上使用了新的方式，网上并没有给出正确�
 
 HDRP的沿用了Legacy的_CameraDepthTexture之类的内置纹理名字，方便我们进行迁移，但是和原本采样方法产生了很大出入，下面详细解释。
 	
-** 为了支持新的渲染效果，HDRP生成了多分辨率版本的深度图（DepthPyramid）**。即为Depth生成一个DepthPyramid。
+ **为了支持新的渲染效果，HDRP生成了多分辨率版本的深度图（DepthPyramid）** 。即为Depth生成一个DepthPyramid。
 	
 这张DepthPayermid并不是类似mip的多分辨率版本纹理（类似通过lod参数对mip采样,如下*代码1*），而是**直接扩展了DepthBuffer的像素大小，把多个分辨率版本放在一张图中**。例如：原本Detph是1024 * 533，为了在DepthPayermid当中保存多个分辨率版本，需要把DepthPayermid扩展到 1024 * 1024。下图是完整的DepthPayermid，最下面的绿框就是真正的depthtexture。
 
@@ -32,6 +32,7 @@ tex2D（tex,float4(texcoord.xy,0,lod）；//代码1 ： 对mip采样
 	
 根据HDRP的Decal源代码和DepthPyramid生成代码可以发现两个地方。
 	
+
 1. DepthPyramid的最高层（DepthTexture）保存在左下角
 	
 2. DepthPyramid中最高层的分辨率和原本DepthTexture是一样的

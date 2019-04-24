@@ -1,3 +1,6 @@
+## gallery
+
+[gallery I](gallerys/gallery.md)
 
 ## Unity
 
@@ -28,6 +31,10 @@
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
 
 [Shaderd打包](blogs/unity/Shaderd打包.md)
+
+## Unity 后处理
+
+[PostProcessing V3](blogs/post/PostprocessingV3.md)
 
 ## Unity HDRP for Artist
 
