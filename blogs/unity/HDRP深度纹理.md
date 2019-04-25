@@ -28,7 +28,7 @@ HDRP的沿用了Legacy的_CameraDepthTexture之类的内置纹理名字，方便
 tex2D（tex,float4(texcoord.xy,0,lod）；//代码1 ： 对mip采样
 ```
 
-** HDRP的_CameraDepthTexture指的是DepthPyramid而非DepthTexture ** ，这样会需要一个很严重的问题。我们按照Legacy版本计算的 **屏幕纹理坐标[0,1] 对应的是整个DepthPyramid **。如何从DepthPyramid拿出最高层的Depth。
+**HDRP的_CameraDepthTexture指的是DepthPyramid而非DepthTexture**  ，这样会需要一个很严重的问题。我们按照Legacy版本计算的 **屏幕纹理坐标[0,1] 对应的是整个DepthPyramid **。如何从DepthPyramid拿出最高层的Depth。
 	
 根据HDRP的Decal源代码和DepthPyramid生成代码可以发现两个地方。
 	

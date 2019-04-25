@@ -36,6 +36,10 @@
 
 [PostProcessing V3](blogs/post/PostprocessingV3.md)
 
+[PPV3 HDRP自定义后处理](blogs/post/HDRP自定义后处理.md)
+
+[ColorGrading](blogs/post/ColorGrading.md)
+
 ## Unity HDRP for Artist
 
 [HDRP基础Shader](blogs/HDRPartist/HDRP基础Shader.md)
