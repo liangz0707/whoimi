@@ -84,15 +84,16 @@ public void Render(CommandBuffer cmd, HDCamera camera, BlueNoise blueNoise, RTHa
 
 ```
 
-在后处理的Render方法当中，主要通过CommandBuffer进行渲染控制，具体的渲染方式有两种：
+在后处理的Render方法当中，主要通过CommandBuffer进行渲染控制，具体的渲染方式有3种：
 
 ```c
 1.cmd.DispatchCompute // 通过ComputeShader直接写入对应像素。
 2.HDUtils.DrawFullScreen(); 
 // 通过绘制全屏的颜色，底层原理是cmd.DrawProcedural
+3.cmd.Blit
 ```
 
-我们可以根据需要使用不同的方式，进行后处理。
+理论上可以使用CommandBuffer的所有方法，具体还没有测试，我们可以根据需要使用不同的方式，进行后处理。
 
 ### 自定义后处理
 
