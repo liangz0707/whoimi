@@ -10,16 +10,16 @@
 
 ## 正午
 
-![正午](C:\Users\Administrator\Desktop\whoimi\gallerys\img\正午.PNG)
+![正午](img\正午.PNG)
 
 ## 黄昏
 
-![黄昏](C:\Users\Administrator\Desktop\whoimi\gallerys\img\黄昏.PNG)
+![黄昏](img\黄昏.PNG)
 
 ## 夜晚
 
-![晚上](C:\Users\Administrator\Desktop\whoimi\gallerys\img\晚上.PNG)
+![晚上](img\晚上.PNG)
 
 ## 清晨
 
-![早晨](C:\Users\Administrator\Desktop\whoimi\gallerys\img\早晨.PNG)
+![早晨](img\早晨.PNG)
