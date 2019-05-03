@@ -2,7 +2,9 @@
 
 [gallery:从模型到打光流程](gallerys/gallery.md)
 
-[gallery:Unity24小时基于物理的光照效果](gallerys/unity24h.md)
+[gallery:Unity24小时基于物理的光照效果](gallerys/unity24h.md)](gallerys/gallery.md)
+
+[gallery:在Unity中实现的《Horizon: Zero Dawn》体积云](gallerys/volumecloud.md)
 
 ## Unity
 
