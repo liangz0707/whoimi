@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e2b063d11b5c15499d76b5399555b066ded25069">
+    <title>whoimi by liangz0707</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>whoimi</h1>
+        <h2>A geek blog</h2>
+        <section id="downloads">
+          
+          <a href="http://github.com/liangz0707/whoimi" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="lua-语言-15-分钟快速入门">Lua 语言 15 分钟快速入门</h1>
+
+<p>本文来自<a href="http://www.linuxidc.com/Linux/2013-06/86582.htm">oschina.net </a></p>
+
+<p><a href="/">back</a></p>
+
+<p><a href="/blogs/language/lang_index.html">back to language</a></p>
+
+<h3 id="注释">注释</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="c1">-- 两个横线开始单行的注释</span>
+<span class="cm">--[[
+    加上两个[和]表示
+      多行的注释。
+ --]]</span>
+</code></pre>
+</div>
+
+<h3 id="变量">变量</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1">-- 所有的数字都是double。 </span>
+<span class="c1">-- 别担心，double的64位中有52位用于 </span>
+<span class="c1">-- 保存精确的int值; 对于需要52位以内的int值， </span>
+<span class="c1">-- 机器的精度不是问题。</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s1">'walternate'</span>  <span class="c1">-- 像Python那样的不可变的字符串。 </span>
+<span class="n">t</span> <span class="o">=</span> <span class="s2">"双引号也可以"</span> 
+<span class="n">u</span> <span class="o">=</span> <span class="s">[[ 两个方括号 
+      用于 
+      多行的字符串。]]</span> 
+<span class="n">t</span> <span class="o">=</span> <span class="kc">nil</span>  <span class="c1">-- 未定义的t; Lua 支持垃圾收集。</span>
+</code></pre>
+</div>
+
+<h3 id="流控制">流控制</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="c1">-- do/end之类的关键字标示出程序块： </span>
+<span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="k">do</span> 
+  <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1">-- 没有 ++ or += 运算符。 </span>
+<span class="k">end</span>
+
+<span class="c1">-- If语句： </span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="k">then</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'over 40'</span><span class="p">)</span> 
+<span class="k">elseif</span> <span class="n">s</span> <span class="o">~=</span> <span class="s1">'walternate'</span> <span class="k">then</span>  <span class="c1">-- ~= 表示不等于。 </span>
+  <span class="c1">-- 像Python一样，== 表示等于；适用于字符串。 </span>
+  <span class="nb">io.write</span><span class="p">(</span><span class="s1">'not over 40\n'</span><span class="p">)</span>  <span class="c1">-- 默认输出到stdout。 </span>
+<span class="k">else</span> 
+  <span class="c1">-- 默认变量都是全局的。 </span>
+  <span class="n">thisIsGlobal</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1">-- 通常用驼峰式定义变量名。</span>
+
+  <span class="c1">-- 如何定义局部变量： </span>
+  <span class="kd">local</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">io.read</span><span class="p">()</span>  <span class="c1">-- 读取stdin的下一行。</span>
+
+  <span class="c1">-- ..操作符用于连接字符串： </span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'Winter is coming, '</span> <span class="o">..</span> <span class="n">line</span><span class="p">)</span> 
+<span class="k">end</span>
+
+<span class="c1">-- 未定义的变量返回nil。 </span>
+<span class="c1">-- 这不会出错： </span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">anUnknownVariable</span>  <span class="c1">-- 现在 foo = nil.</span>
+
+<span class="n">aBoolValue</span> <span class="o">=</span> <span class="kc">false</span>
+
+<span class="c1">--只有nil和false是fals; 0和 ''都是true！ </span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">aBoolValue</span> <span class="k">then</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'twas false'</span><span class="p">)</span> <span class="k">end</span>
+
+<span class="c1">-- 'or'和 'and'都是可短路的（译者注：如果已足够进行条件判断则不计算后面的条件表达式）。 </span>
+<span class="c1">-- 类似于C/js里的 a?b:c 操作符： </span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">aBoolValue</span> <span class="ow">and</span> <span class="s1">'yes'</span> <span class="ow">or</span> <span class="s1">'no'</span>  <span class="c1">--&gt; 'no'</span>
+
+<span class="n">karlSum</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span> <span class="k">do</span>  <span class="c1">-- 范围包括两端 </span>
+  <span class="n">karlSum</span> <span class="o">=</span> <span class="n">karlSum</span> <span class="o">+</span> <span class="n">i</span> 
+<span class="k">end</span>
+
+<span class="c1">-- 使用 "100, 1, -1" 表示递减的范围： </span>
+<span class="n">fredSum</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="k">do</span> <span class="n">fredSum</span> <span class="o">=</span> <span class="n">fredSum</span> <span class="o">+</span> <span class="n">j</span> <span class="k">end</span>
+
+<span class="c1">-- 通常，范围表达式为begin, end[, step].</span>
+
+<span class="c1">-- 另一种循环表达方式： </span>
+<span class="k">repeat</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'the way of the future'</span><span class="p">)</span> 
+  <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">1</span> 
+<span class="k">until</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre>
+</div>
+
+<h3 id="函数">函数</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="k">function</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> 
+  <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="k">then</span> <span class="k">return</span> <span class="mi">1</span> <span class="k">end</span> 
+  <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> 
+<span class="k">end</span>
+
+<span class="c1">-- 支持闭包及匿名函数： </span>
+<span class="k">function</span> <span class="nf">adder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+  <span class="c1">-- 调用adder时，会创建用于返回的函数，并且能记住变量x的值： </span>
+  <span class="k">return</span> <span class="k">function</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="k">end</span> 
+<span class="k">end</span> 
+<span class="n">a1</span> <span class="o">=</span> <span class="n">adder</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span> 
+<span class="n">a2</span> <span class="o">=</span> <span class="n">adder</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1">--&gt; 25 </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">(</span><span class="mi">64</span><span class="p">))</span>  <span class="c1">--&gt; 100</span>
+
+<span class="c1">-- 返回值、函数调用和赋值都可以使用长度不匹配的list。 </span>
+<span class="c1">-- 不匹配的接收方会被赋为nil； </span>
+<span class="c1">-- 不匹配的发送方会被忽略。</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> 
+<span class="c1">-- 现在x = 1, y = 2, z = 3, 而 4 会被丢弃。</span>
+
+<span class="k">function</span> <span class="nf">bar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
+  <span class="k">return</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span> 
+<span class="k">end</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bar</span><span class="p">(</span><span class="s1">'zaphod'</span><span class="p">)</span>  <span class="c1">--&gt; prints "zaphod  nil nil" </span>
+<span class="c1">-- 现在 x = 4, y = 8, 而值15..42被丢弃。</span>
+
+<span class="c1">-- 函数是一等公民，可以是局部或者全局的。 </span>
+<span class="c1">-- 下面是等价的： </span>
+<span class="k">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">end</span> 
+<span class="n">f</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">end</span>
+
+<span class="c1">-- 这些也是等价的： </span>
+<span class="kd">local</span> <span class="k">function</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">end</span> 
+<span class="kd">local</span> <span class="n">g</span><span class="p">;</span> <span class="n">g</span>  <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">end</span> 
+<span class="c1">-- 'local g'可以支持g自引用。</span>
+
+<span class="c1">-- 顺便提一下，三角函数是以弧度为单位的。</span>
+
+<span class="c1">-- 用一个字符串参数调用函数，不需要括号： </span>
+<span class="nb">print</span> <span class="s1">'hello'</span>  <span class="c1">--可以工作。</span>
+</code></pre>
+</div>
+
+<h3 id="table">Table</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="c1">-- Table = Lua唯一的数据结构; </span>
+<span class="c1">--        它们是关联数组。 </span>
+<span class="c1">-- 类似于PHP的数组或者js的对象， </span>
+<span class="c1">-- 它们是哈希查找表（dict），也可以按list去使用。</span>
+
+<span class="c1">-- 按字典/map的方式使用Table：</span>
+
+<span class="c1">-- Dict的迭代默认使用string类型的key： </span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="n">key1</span> <span class="o">=</span> <span class="s1">'value1'</span><span class="p">,</span> <span class="n">key2</span> <span class="o">=</span> <span class="kc">false</span><span class="p">}</span>
+
+<span class="c1">-- String的key可以像js那样用点去引用： </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">key1</span><span class="p">)</span>  <span class="c1">-- 打印 'value1'. </span>
+<span class="n">t</span><span class="p">.</span><span class="n">newKey</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1">-- 添加新的 key/value 对。 </span>
+<span class="n">t</span><span class="p">.</span><span class="n">key2</span> <span class="o">=</span> <span class="kc">nil</span>  <span class="c1">-- 从table删除 key2。</span>
+
+<span class="c1">-- 使用任何非nil的值作为key： </span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">'@!#'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'qbert'</span><span class="p">,</span> <span class="p">[{}]</span> <span class="o">=</span> <span class="mi">1729</span><span class="p">,</span> <span class="p">[</span><span class="mi">6</span><span class="p">.</span><span class="mi">28</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'tau'</span><span class="p">}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">6</span><span class="p">.</span><span class="mi">28</span><span class="p">])</span>  <span class="c1">-- 打印 "tau"</span>
+
+<span class="c1">-- 对于数字和字符串的key是按照值来匹配的，但是对于table则是按照id来匹配。 </span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="s1">'@!#'</span><span class="p">]</span>  <span class="c1">-- 现在 a = 'qbert'. </span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">u</span><span class="p">[{}]</span>    <span class="c1">-- 我们期待的是 1729,  但是得到的是nil: </span>
+<span class="c1">-- b = nil ，因为没有找到。 </span>
+<span class="c1">-- 之所以没找到，是因为我们用的key与保存数据时用的不是同一个对象。 </span>
+<span class="c1">-- 所以字符串和数字是可用性更好的key。</span>
+
+<span class="c1">-- 只需要一个table参数的函数调用不需要括号： </span>
+<span class="k">function</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">key1</span><span class="p">)</span> <span class="k">end</span> 
+<span class="n">h</span><span class="p">{</span><span class="n">key1</span> <span class="o">=</span> <span class="s1">'Sonmi~451'</span><span class="p">}</span>  <span class="c1">-- 打印'Sonmi~451'.</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">do</span>  <span class="c1">-- Table 的遍历. </span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> 
+<span class="k">end</span>
+
+<span class="c1">-- _G 是一个特殊的table，用于保存所有的全局变量 </span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">_G</span><span class="p">[</span><span class="s1">'_G'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">_G</span><span class="p">)</span>  <span class="c1">-- 打印'true'.</span>
+
+<span class="c1">-- 按list/array的方式使用：</span>
+
+<span class="c1">-- List 的迭代方式隐含会添加int的key： </span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'value1'</span><span class="p">,</span> <span class="s1">'value2'</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">21</span><span class="p">,</span> <span class="s1">'gigawatts'</span><span class="p">}</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">v</span> <span class="k">do</span>  <span class="c1">-- #v 是list的size </span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1">-- 索引从 1 开始!! 太疯狂了！ </span>
+<span class="k">end</span> 
+<span class="c1">-- 'list'并非真正的类型，v 还是一个table， </span>
+<span class="c1">-- 只不过它有连续的整数作为key，可以像list那样去使用。</span>
+</code></pre>
+</div>
+
+<h3 id="元表metatable">元表(metatable)</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="c1">-- table的元表提供了一种机制，可以重定义table的一些操作。 </span>
+<span class="c1">-- 之后我们会看到元表是如何支持类似js的prototype行为。</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">}</span>  <span class="c1">-- 表示一个分数 a/b. </span>
+<span class="n">f2</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="c1">-- 这个是错误的： </span>
+<span class="c1">-- s = f1 + f2</span>
+
+<span class="n">metafraction</span> <span class="o">=</span> <span class="p">{}</span> 
+<span class="k">function</span> <span class="nc">metafraction</span><span class="p">.</span><span class="nf">__add</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span> 
+  <span class="n">sum</span> <span class="o">=</span> <span class="p">{}</span> 
+  <span class="n">sum</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">b</span> 
+  <span class="n">sum</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">f2</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">f1</span><span class="p">.</span><span class="n">b</span> 
+  <span class="k">return</span> <span class="n">sum</span> 
+<span class="k">end</span>
+
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">metafraction</span><span class="p">)</span> 
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">metafraction</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>  <span class="c1">-- 调用在f1的元表上的__add(f1, f2) 方法</span>
+
+<span class="c1">-- f1, f2 没有能访问它们元表的key，这与prototype不一样， </span>
+<span class="c1">-- 所以你必须用getmetatable(f1)去获得元表。元表是一个普通的table， </span>
+<span class="c1">-- Lua可以通过通常的方式去访问它的key，例如__add。</span>
+
+<span class="c1">-- 不过下面的代码是错误的，因为s没有元表： </span>
+<span class="c1">-- t = s + s </span>
+<span class="c1">-- 下面的类形式的模式可以解决这个问题：</span>
+
+<span class="c1">-- 元表的__index 可以重载点运算符的查找： </span>
+<span class="n">defaultFavs</span> <span class="o">=</span> <span class="p">{</span><span class="n">animal</span> <span class="o">=</span> <span class="s1">'gru'</span><span class="p">,</span> <span class="n">food</span> <span class="o">=</span> <span class="s1">'donuts'</span><span class="p">}</span> 
+<span class="n">myFavs</span> <span class="o">=</span> <span class="p">{</span><span class="n">food</span> <span class="o">=</span> <span class="s1">'pizza'</span><span class="p">}</span> 
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">myFavs</span><span class="p">,</span> <span class="p">{</span><span class="n">__index</span> <span class="o">=</span> <span class="n">defaultFavs</span><span class="p">})</span> 
+<span class="n">eatenBy</span> <span class="o">=</span> <span class="n">myFavs</span><span class="p">.</span><span class="n">animal</span>  <span class="c1">-- 可以工作！这要感谢元表的支持</span>
+
+<span class="c1">-- 如果在table中直接查找key失败，会使用元表的__index 继续查找，并且是递归的查找</span>
+
+<span class="c1">-- __index的值也可以是函数function(tbl, key) ，这样可以支持更多的自定义的查找。</span>
+
+<span class="c1">-- __index、__add等等，被称为元方法。 </span>
+<span class="c1">-- 这里是table的元方法的全部清单：</span>
+
+<span class="c1">-- __add(a, b)                    for a + b </span>
+<span class="c1">-- __sub(a, b)                    for a - b </span>
+<span class="c1">-- __mul(a, b)                    for a * b </span>
+<span class="c1">-- __div(a, b)                    for a / b </span>
+<span class="c1">-- __mod(a, b)                    for a % b </span>
+<span class="c1">-- __pow(a, b)                    for a ^ b </span>
+<span class="c1">-- __unm(a)                        for -a </span>
+<span class="c1">-- __concat(a, b)                  for a .. b </span>
+<span class="c1">-- __len(a)                        for #a </span>
+<span class="c1">-- __eq(a, b)                      for a == b </span>
+<span class="c1">-- __lt(a, b)                      for a &lt; b </span>
+<span class="c1">-- __le(a, b)                      for a &lt;= b </span>
+<span class="c1">-- __index(a, b)  &lt;fn or a table&gt;  for a.b </span>
+<span class="c1">-- __newindex(a, b, c)            for a.b = c </span>
+<span class="c1">-- __call(a, ...)                  for a(...)</span>
+</code></pre>
+</div>
+
+<h3 id="类风格的table">类风格的table</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="c1">-- 类并不是内置的；有不同的方法通过表和元表来实现。</span>
+
+<span class="c1">-- 下面是一个例子，后面是对例子的解释</span>
+
+<span class="n">Dog</span> <span class="o">=</span> <span class="p">{}</span>                                  <span class="c1">-- 1.</span>
+
+<span class="k">function</span> <span class="nf">Dog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                        <span class="c1">-- 2. </span>
+  <span class="n">newObj</span> <span class="o">=</span> <span class="p">{</span><span class="n">sound</span> <span class="o">=</span> <span class="s1">'woof'</span><span class="p">}</span>                <span class="c1">-- 3. </span>
+  <span class="n">self</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">self</span>                      <span class="c1">-- 4. </span>
+  <span class="k">return</span> <span class="nb">setmetatable</span><span class="p">(</span><span class="n">newObj</span><span class="p">,</span> <span class="n">self</span><span class="p">)</span>        <span class="c1">-- 5. </span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nf">Dog</span><span class="p">:</span><span class="n">makeSound</span><span class="p">()</span>                  <span class="c1">-- 6. </span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">'I say '</span> <span class="o">..</span> <span class="n">self</span><span class="p">.</span><span class="n">sound</span><span class="p">)</span> 
+<span class="k">end</span>
+
+<span class="n">mrDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                          <span class="c1">-- 7. </span>
+<span class="n">mrDog</span><span class="p">:</span><span class="n">makeSound</span><span class="p">()</span>  <span class="c1">-- 'I say woof'        -- 8.</span>
+
+<span class="c1">-- 1. Dog看上去像一个类；其实它完全是一个table。 </span>
+<span class="c1">-- 2. 函数tablename:fn(...) 与函数tablename.fn(self, ...) 是一样的 </span>
+<span class="c1">--    冒号（:）只是添加了self作为第一个参数。 </span>
+<span class="c1">--    下面的第7和第8条说明了self变量是如何得到其值的。 </span>
+<span class="c1">-- 3. newObj是类Dog的一个实例。 </span>
+<span class="c1">-- 4. self为初始化的类实例。通常self = Dog，不过继承关系可以改变这个。 </span>
+<span class="c1">--    如果把newObj的元表和__index都设为self， </span>
+<span class="c1">--    newObj就可以得到self的函数。 </span>
+<span class="c1">-- 5. 记住：setmetatable返回其第一个参数。 </span>
+<span class="c1">-- 6. 冒号（：）在第2条是工作的，不过这里我们期望 </span>
+<span class="c1">--    self是一个实例，而不是类 </span>
+<span class="c1">-- 7. 与Dog.new(Dog)类似，所以 self = Dog in new()。 </span>
+<span class="c1">-- 8. 与mrDog.makeSound(mrDog)一样; self = mrDog。</span>
+
+</code></pre>
+</div>
+
+<h3 id="继承">继承</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="n">LoudDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                          <span class="c1">-- 1.</span>
+
+<span class="k">function</span> <span class="nf">LoudDog</span><span class="p">:</span><span class="n">makeSound</span><span class="p">()</span> 
+  <span class="n">s</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">sound</span> <span class="o">..</span> <span class="s1">' '</span>                      <span class="c1">-- 2. </span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">..</span> <span class="n">s</span> <span class="o">..</span> <span class="n">s</span><span class="p">)</span> 
+<span class="k">end</span>
+
+<span class="n">seymour</span> <span class="o">=</span> <span class="n">LoudDog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                      <span class="c1">-- 3. </span>
+<span class="n">seymour</span><span class="p">:</span><span class="n">makeSound</span><span class="p">()</span>  <span class="c1">-- 'woof woof woof'      -- 4.</span>
+
+<span class="c1">-- 1. LoudDog获得Dog的方法和变量列表。 </span>
+<span class="c1">-- 2. 通过new()，self有一个'sound'的key from new()，参见第3条。 </span>
+<span class="c1">-- 3. 与LoudDog.new(LoudDog)一样，并且被转换成 </span>
+<span class="c1">--    Dog.new(LoudDog)，因为LoudDog没有'new' 的key， </span>
+<span class="c1">--    不过在它的元表可以看到 __index = Dog。 </span>
+<span class="c1">--    结果: seymour的元表是LoudDog，并且 </span>
+<span class="c1">--    LoudDog.__index = LoudDog。所以有seymour.key </span>
+<span class="c1">--    = seymour.key, LoudDog.key, Dog.key, 要看 </span>
+<span class="c1">--    针对给定的key哪一个table排在前面。 </span>
+<span class="c1">-- 4. 在LoudDog可以找到'makeSound'的key；这与 </span>
+<span class="c1">--    LoudDog.makeSound(seymour)一样。</span>
+
+<span class="c1">-- 如果需要，子类也可以有new()，与基类的类似： </span>
+<span class="k">function</span> <span class="nf">LoudDog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span> 
+  <span class="n">newObj</span> <span class="o">=</span> <span class="p">{}</span> 
+  <span class="c1">-- 初始化newObj </span>
+  <span class="n">self</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">self</span> 
+  <span class="k">return</span> <span class="nb">setmetatable</span><span class="p">(</span><span class="n">newObj</span><span class="p">,</span> <span class="n">self</span><span class="p">)</span> 
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<h3 id="模块">模块</h3>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="cm">--[[ 我把这部分给注释了，这样脚本剩下的部分就可以运行了
+
+-- 假设文件mod.lua的内容是： 
+local M = {}
+
+local function sayMyName() 
+  print('Hrunkner') 
+end
+
+function M.sayHello() 
+  print('Why hello there') 
+  sayMyName() 
+end
+
+return M
+
+-- 另一个文件也可以使用mod.lua的函数： 
+local mod = require('mod')  -- 运行文件mod.lua.
+
+-- require是包含模块的标准做法。 
+-- require等价于:    (针对没有被缓存的情况；参加后面的内容) 
+local mod = (function () 
+  &lt;contents of mod.lua&gt; 
+end)() 
+-- mod.lua就好像一个函数体，所以mod.lua的局部变量对外是不可见的。
+
+-- 下面的代码是工作的，因为在mod.lua中mod = M： 
+mod.sayHello()  -- Says hello to Hrunkner.
+
+-- 这是错误的；sayMyName只在mod.lua中存在： 
+mod.sayMyName()  -- 错误
+
+-- require返回的值会被缓存，所以一个文件只会被运行一次， 
+-- 即使它被require了多次。
+
+-- 假设mod2.lua包含代码"print('Hi!')"。 
+local a = require('mod2')  -- 打印Hi! 
+local b = require('mod2')  -- 不再打印; a=b.
+
+-- dofile与require类似，只是不做缓存： 
+dofile('mod2')  --&gt; Hi! 
+dofile('mod2')  --&gt; Hi! (再次运行，与require不同)
+
+-- loadfile加载一个lua文件，但是并不允许它。 
+f = loadfile('mod2')  -- Calling f() runs mod2.lua.
+
+-- loadstring是loadfile的字符串版本。 
+g = loadstring('print(343)')  --返回一个函数。 
+g()  -- 打印343; 在此之前什么也不打印。
+
+--]]</span>
+</code></pre>
+</div>
+
+
+      </section>
+    </div>
+
+    
+
+
+    <footer>
+      text footer
+    </footer>
+  </body>
+</html>
