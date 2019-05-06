@@ -1,5 +1,0 @@
-无论在Deferred还是Forward，在AfterForwardAplha阶段深度就已经清除了
-
-
-
-Resolve Depth 在Gbuffer填充时生效，在Gbuffer结束时，会拷贝的Depth纹理中
