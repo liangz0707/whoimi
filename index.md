@@ -48,7 +48,9 @@
 
 [HDRP基础Shader](blogs/HDRPartist/HDRP基础Shader.md)
 
-[Shader Graph](blogs/HDRPartist/Shader Graph.md)
+[Shader Graph](blogs/HDRPartist/Shader Graph.md)](blogs/HDRPartist/HDRP基础Shader.md)
+
+[物理摄像机光照配置](blogs/HDRPartist/unity物理摄相机.md)
 
 ## Unity HDRP 代码阅读
 
