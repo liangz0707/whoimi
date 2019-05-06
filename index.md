@@ -50,6 +50,8 @@
 
 [Shader Graph](blogs/HDRPartist/Shader Graph.md)
 
+[物理摄像机光照配置](blogs/HDRPartist/unity物理摄相机.md)
+
 ## Unity HDRP 代码阅读
 
 [1.代码结构](blogs/HDRPsource/1.代码结构.md)
