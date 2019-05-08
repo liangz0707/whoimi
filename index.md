@@ -18,7 +18,7 @@
 
 [hdrp小问题](blogs/unity/hdrp小问题.md)
 
-[Hdrp一些特殊功能](blogs/unity/Hdrp一些特殊功能.md)
+[Hdrp一些特殊功能：天空球编程和新Shader介绍](blogs/unity/Hdrp一些特殊功能.md)
 
 [Unity线性空间和Gamma空间](blogs/unity/Linear And Gamma.md)
 
@@ -28,6 +28,8 @@
 
 [Shander当中的坐标变换](blogs/unity/Shader当中的坐标变化.md)
 
+[HDRP Shader当中的坐标系变换矩阵](blogs/unity/HDRPShader当中的坐标系变换矩阵.md)
+
 [SPR官方介绍](blogs/unity/SPR官方介绍.md)
 
 [深度相关内容](blogs/unity/深度信息.md)
@@ -35,6 +37,8 @@
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
 
 [Shaderd打包](blogs/unity/Shaderd打包.md)
+
+[在Shader中通过深度图恢复世界坐标](blogs/unity/世界坐标恢复.md)
 
 ## Unity 后处理
 
