@@ -56,6 +56,8 @@
 
 [物理摄像机光照配置](blogs/HDRPartist/unity物理摄相机.md)
 
+[在Substance Painter当中实现Unity HDRP的光照模型](blogs/HDRPartist/SubstanceUseUnityShading.md)
+
 ## Unity HDRP 代码阅读
 
 [1.代码结构](blogs/HDRPsource/1.代码结构.md)
