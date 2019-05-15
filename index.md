@@ -86,6 +86,14 @@
 
 [GPU分支语句性能](blogs/GPUAartch/GPU分支语句性能.md)
 
+[GPU架构类型整合](blogs/GPUAartch/GPU架构类型整合.md)
+
+[TeraScale架构浅析](blogs/GPUAartch/TeraScale架构浅析.md)
+
+[TODO:GCN架构浅析与优化](blogs/GPUAartch/GCN架构浅析.md)
+
+TODO:手机图形架构浅析与优化
+
 ## 杂项
 
 [游戏行业](blogs/game/game_index.md)
