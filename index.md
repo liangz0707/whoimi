@@ -112,6 +112,8 @@ TODO:手机图形架构浅析与优化
 
 ## 我的动态
 
+[LearningRoadMap](LearningRoadMap.md)
+
 [2019/5/3] 参考论文实现了《地平线黎明时分》中体积云的核心部分算法，使用compute shader实现。
 
 [2019/4/27] 开始研究反走样内容。
