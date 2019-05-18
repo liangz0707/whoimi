@@ -6,7 +6,7 @@
 
 [gallery:在Unity中实现的《Horizon: Zero Dawn》体积云](gallerys/volumecloud.md)
 
-[gallery:Noise](gallerys/NoiseWork.md)
+[gallery:Noise](gallerys/noisework.md)
 
 ## Unity
 
@@ -36,7 +36,7 @@
 
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
 
-[Shaderd打包](blogs/unity/Shaderd打包.md)
+[Shaderd打包](blogs/unity/Shader打包.md)
 
 [在Shader中通过深度图恢复世界坐标](blogs/unity/世界坐标恢复.md)
 
