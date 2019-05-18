@@ -6,6 +6,8 @@
 
 [gallery:在Unity中实现的《Horizon: Zero Dawn》体积云](gallerys/volumecloud.md)
 
+[gallery:Noise](gallerys/NoiseWork.md)
+
 ## Unity
 
 [Unity Shader阴影参数](blogs/unity/fullforwardshadows.md)
