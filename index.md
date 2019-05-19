@@ -100,7 +100,7 @@
 
 [TODO:GCN架构浅析与优化](blogs/GPUAartch/GCN架构浅析.md)
 
-TODO:手机图形架构浅析与优化
+[手机图形架构浅析与优化](blogs/GPUAartch/手机GPU架构与优化.md)
 
 ## 杂项
 
