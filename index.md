@@ -6,6 +6,8 @@
 
 [gallery:在Unity中实现的《Horizon: Zero Dawn》体积云](gallerys/volumecloud.md)
 
+[gallery:Noise](gallerys/noisework.md)
+
 ## Unity
 
 [Unity Shader阴影参数](blogs/unity/fullforwardshadows.md)
@@ -34,7 +36,7 @@
 
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
 
-[Shaderd打包](blogs/unity/Shaderd打包.md)
+[Shaderd打包](blogs/unity/Shader打包.md)
 
 [在Shader中通过深度图恢复世界坐标](blogs/unity/世界坐标恢复.md)
 
@@ -100,7 +102,7 @@
 
 [TODO:GCN架构浅析与优化](blogs/GPUAartch/GCN架构浅析.md)
 
-TODO:手机图形架构浅析与优化
+[手机图形架构浅析与优化](blogs/GPUAartch/手机GPU架构与优化.md)
 
 ## 杂项
 
