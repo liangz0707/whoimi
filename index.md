@@ -10,13 +10,13 @@
 
 ## Unity
 
-[Unity Shader阴影参数](blogs/unity/fullforwardshadows.md)
+[Unity Surface Shader阴影相关宏的说明](blogs/unity/fullforwardshadows.md)
 
 [HDRP中HairShader代码结构](blogs/unity/HDRP中HairShader代码结构.md)
 
 [HDRP中HairShader代码结构2](blogs/unity/HDRP中HairShader代码结构2.md)
 
-[HDRP深度纹理](blogs/unity/HDRP深度纹理.md)
+[HDRP深度纹理读取与使用](blogs/unity/HDRP深度纹理.md)
 
 [Hdrp一些特殊功能：天空球编程和新Shader介绍](blogs/unity/Hdrp一些特殊功能.md)
 
@@ -24,9 +24,9 @@
 
 [自定义渲染目标](blogs/unity/SetRenderTarget.md)
 
-[遮挡剔除](blogs/unity/Occluded Culling.md)
+[遮挡剔除简介](blogs/unity/Occluded Culling.md)
 
-[Shander当中的坐标变换](blogs/unity/Shader当中的坐标变化.md)
+[Shander当中的坐标变换和对应矩阵说明](blogs/unity/Shader当中的坐标变化.md)
 
 [HDRP Shader当中的坐标系变换矩阵](blogs/unity/HDRPShader当中的坐标系变换矩阵.md)
 
@@ -36,7 +36,7 @@
 
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
 
-[Shaderd打包](blogs/unity/Shader打包.md)
+[Shaderd打包中遇到的问题](blogs/unity/Shader打包.md)
 
 [在Shader中通过深度图恢复世界坐标](blogs/unity/世界坐标恢复.md)
 
@@ -71,6 +71,16 @@ TODO:卡通渲染
 [在Substance Painter当中实现Unity HDRP的光照模型](blogs/HDRPartist/SubstanceUseUnityShading.md)
 
 ## Unity HDRP 代码阅读
+
+目前正在看6. *版本的内容，重新梳理HDRP的内容。
+
+TODO: 1.HDRP主要内容
+
+TODO: 2.HDRP渲染流程与光照模型
+
+TODO: 3.HDRP Shader开发说明
+
+下面这部分内容主要总结自HDRP4.*以及之前的版本，很多地方不是很准确，并且有很大变动。
 
 [1.代码结构](blogs/HDRPsource/1.代码结构.md)
 
@@ -121,6 +131,8 @@ TODO:卡通渲染
 ## 我的动态
 
 [LearningRoadMap](LearningRoadMap.md)
+
+[2019/5/23] 研究Unity阴影解决方案。
 
 [2019/5/3] 参考论文实现了《地平线黎明时分》中体积云的核心部分算法，使用compute shader实现。
 
