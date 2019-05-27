@@ -72,13 +72,11 @@ TODO:卡通渲染
 
 ## Unity HDRP 代码阅读
 
-目前正在看6. *版本的内容，重新梳理HDRP的内容。
+下面这部分是HDRP6.*版本的内容。
 
-TODO: 1.HDRP主要内容
+[1.HDRP渲染管线总结](blogs/HDRPsource/new1.HDRP渲染管线总结.md)
 
-TODO: 2.HDRP渲染流程与光照模型
-
-TODO: 3.HDRP Shader开发说明
+[2.HDRP Shader开发说明](blogs/HDRPsource/new2.HDRPShader开发说明.md)
 
 下面这部分内容主要总结自HDRP4.*以及之前的版本，很多地方不是很准确，并且有很大变动。
 
