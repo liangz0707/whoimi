@@ -48,6 +48,8 @@
 
 [Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
 
+[法线空间转换的问题与解决方案推导](blogs/RTR/法线空间转换.md)
+
 [渲染管线](blogs/RTR/渲染管线.md) 
 
 TODO:卡通渲染 
