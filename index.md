@@ -80,6 +80,8 @@ TODO:卡通渲染
 
 [2.HDRP Shader开发说明](blogs/HDRPsource/new2.HDRPShader开发说明.md)
 
+[3.阴影部分代码](blogs/HDRPsource/new3.HDRP Shadow.md)
+
 下面这部分内容主要总结自HDRP4.*以及之前的版本，很多地方不是很准确，并且有很大变动。
 
 [1.代码结构](blogs/HDRPsource/1.代码结构.md)
