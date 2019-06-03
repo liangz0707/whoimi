@@ -62,7 +62,7 @@ TODO:卡通渲染
 
 [ColorGrading介绍](blogs/post/ColorGrading.md)
 
-## Unity HDRP for Artist
+## Unity for Artist
 
 [HDRP基础Shader](blogs/HDRPartist/HDRP基础Shader.md)
 
@@ -71,6 +71,8 @@ TODO:卡通渲染
 [物理摄像机光照配置](blogs/HDRPartist/unity物理摄相机.md)
 
 [在Substance Painter当中实现Unity HDRP的光照模型](blogs/HDRPartist/SubstanceUseUnityShading.md)
+
+[场景美术资源优化思路](blogs/HDRPartist/场景美术资源优化思路.md)
 
 ## Unity HDRP 代码阅读
 
