@@ -8,17 +8,13 @@
 
 [gallery:Noise](gallerys/noisework.md)
 
-## Unity
+## Unity常见问题
 
 [Unity Surface Shader阴影相关宏的说明](blogs/unity/fullforwardshadows.md)
 
-[HDRP中HairShader代码结构](blogs/unity/HDRP中HairShader代码结构.md)
-
-[HDRP中HairShader代码结构2](blogs/unity/HDRP中HairShader代码结构2.md)
-
 [HDRP深度纹理读取与使用](blogs/unity/HDRP深度纹理.md)
 
-[Hdrp一些特殊功能：天空球编程和新Shader介绍](blogs/unity/Hdrp一些特殊功能.md)
+[HDRP一些特殊功能：天空球编程和新Shader介绍](blogs/unity/Hdrp一些特殊功能.md)
 
 [Unity线性空间和Gamma空间](blogs/unity/Linear And Gamma.md)
 
@@ -30,8 +26,6 @@
 
 [HDRP Shader当中的坐标系变换矩阵](blogs/unity/HDRPShader当中的坐标系变换矩阵.md)
 
-[SPR官方介绍](blogs/unity/SPR官方介绍.md)
-
 [深度相关内容](blogs/unity/深度信息.md)
 
 [渲染过程中buffer的变化](blogs/unity/渲染过程中buffer的变化.md)
@@ -39,6 +33,14 @@
 [Shaderd打包中遇到的问题](blogs/unity/Shader打包.md)
 
 [在Shader中通过深度图恢复世界坐标](blogs/unity/世界坐标恢复.md)
+
+TODO: UV云被远剪裁面Clip以及Shadow被近剪裁面Clip
+
+## 数学相关
+
+TODO: 蒙特卡洛积分理论
+
+TODO: MVP矩阵变换、透视变换、视口变换
 
 ## 实时渲染相关
 
@@ -52,7 +54,11 @@
 
 [渲染管线](blogs/RTR/渲染管线.md) 
 
+TODO:BSDF,BRDF,BTDF等成分与原理
+
 TODO:卡通渲染 
+
+TODO:shell模型实现毛发渲染
 
 ## Unity 后处理
 
@@ -74,6 +80,8 @@ TODO:卡通渲染
 
 [场景美术资源优化思路](blogs/HDRPartist/场景美术资源优化思路.md)
 
+TODO:Unity 光照烘焙详解
+
 ## Unity HDRP 代码阅读
 
 下面这部分是HDRP6.*版本的内容。
@@ -84,7 +92,11 @@ TODO:卡通渲染
 
 [3.阴影部分代码](blogs/HDRPsource/new3.HDRP Shadow.md)
 
+[HDRPShader内置矩阵备查](blogs/HDRPsource/HDRPShader内置矩阵备查.md)
+
 下面这部分内容主要总结自HDRP4.*以及之前的版本，很多地方不是很准确，并且有很大变动。
+
+[SPR官方介绍](blogs/unity/SPR官方介绍.md)
 
 [1.代码结构](blogs/HDRPsource/1.代码结构.md)
 
@@ -106,7 +118,9 @@ TODO:卡通渲染
 
 [10.Lighting设置](blogs/HDRPsource/10.Lighting设置.md)
 
-[HDRPShader内置矩阵备查](blogs/HDRPsource/HDRPShader内置矩阵备查.md)
+[HDRP中HairShader代码结构](blogs/unity/HDRP中HairShader代码结构.md)
+
+[HDRP中HairShader代码结构2](blogs/unity/HDRP中HairShader代码结构2.md)
 
 ## GPU
 
@@ -121,6 +135,8 @@ TODO:卡通渲染
 [TODO:GCN架构浅析与优化](blogs/GPUAartch/GCN架构浅析.md)
 
 [手机图形架构浅析与优化](blogs/GPUAartch/手机GPU架构与优化.md)
+
+TODO: 通过PS4开发机+Razor详细分析硬件架构与渲染过程
 
 ## 杂项
 
