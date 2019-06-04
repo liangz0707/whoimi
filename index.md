@@ -34,6 +34,8 @@
 
 [在Shader中通过深度图恢复世界坐标](blogs/unity/世界坐标恢复.md)
 
+[Enlighten原理与烘焙效率提升](blogs/unity/EnlightenBaking.md)
+
 TODO: UV云被远剪裁面Clip以及Shadow被近剪裁面Clip
 
 ## 数学相关
