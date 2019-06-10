@@ -36,7 +36,7 @@
 
 [Enlighten原理与烘焙效率提升](blogs/unity/EnlightenBaking.md)
 
-TODO: UV云被远剪裁面Clip以及Shadow被近剪裁面Clip
+[UV云被远剪裁面Clip以及Shadow被近剪裁面Clip](blogs/unity/UV云被裁减问题.md)
 
 ## 数学相关
 
