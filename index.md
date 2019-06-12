@@ -82,7 +82,7 @@ TODO:shell模型实现毛发渲染
 
 [场景美术资源优化思路](blogs/HDRPartist/场景美术资源优化思路.md)
 
-TODO:Unity 光照烘焙详解
+[TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
 ## Unity HDRP 代码阅读
 
