@@ -56,11 +56,11 @@ TODO: MVP矩阵变换、透视变换、视口变换
 
 [渲染管线](blogs/RTR/渲染管线.md) 
 
-TODO:BSDF,BRDF,BTDF等成分与原理
+[TODO: BSDF,BRDF,BTDF等成分与原理](blogs/RTR/表面反射模型.md) 
 
 TODO:卡通渲染 
 
-TODO:shell模型实现毛发渲染
+[TODO:shell模型实现毛发渲染](blogs/RTR/毛发方案分析.md) 
 
 ## Unity 后处理
 
