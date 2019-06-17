@@ -82,6 +82,8 @@ TODO:卡通渲染
 
 [场景美术资源优化思路](blogs/HDRPartist/场景美术资源优化思路.md)
 
+[Density Volume 3D纹理制作方案](blogs/HDRPartist/Density Volume 3D纹理制作方案.md)
+
 [TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
 ## Unity HDRP 代码阅读
