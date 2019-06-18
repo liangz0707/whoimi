@@ -8,6 +8,8 @@
 
 [gallery:Noise](gallerys/noisework.md)
 
+gallery:SDF在polygon渲染当中的应用探索
+
 ## Unity常见问题
 
 [Unity Surface Shader阴影相关宏的说明](blogs/unity/fullforwardshadows.md)
@@ -38,6 +40,10 @@
 
 [UV云被远剪裁面Clip以及Shadow被近剪裁面Clip](blogs/unity/UV云被裁减问题.md)
 
+## SDF与RayCasting
+
+TODO: Unity SRP实现SDF渲染框架
+
 ## 数学相关
 
 TODO: 蒙特卡洛积分理论
@@ -56,9 +62,9 @@ TODO: MVP矩阵变换、透视变换、视口变换
 
 [渲染管线](blogs/RTR/渲染管线.md) 
 
-[TODO: BSDF,BRDF,BTDF等成分与原理](blogs/RTR/表面反射模型.md) 
+[BRDF基础原理与推导](blogs/RTR/表面反射模型.md) 
 
-TODO:卡通渲染 
+TODO：BRDF常用模型与应用
 
 [TODO:shell模型实现毛发渲染](blogs/RTR/毛发方案分析.md) 
 
@@ -155,6 +161,12 @@ TODO: 通过PS4开发机+Razor详细分析硬件架构与渲染过程
 ## 我的动态
 
 [LearningRoadMap](LearningRoadMap.md)
+
+[2019/6/15] SDF渲染。
+
+[2019/6/15] BRDF原理。
+
+[2019/6/10] 怪物猎人毛发方案。
 
 [2019/5/23] 研究Unity阴影解决方案。
 
