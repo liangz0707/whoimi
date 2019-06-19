@@ -90,6 +90,8 @@ TODO：BRDF常用模型与应用
 
 [Density Volume 3D纹理制作方案](blogs/HDRPartist/Density Volume 3D纹理制作方案.md)
 
+[法线贴图旋转](blogs/HDRPartist/法线贴图旋转.md)
+
 [TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
 ## Unity HDRP 代码阅读
