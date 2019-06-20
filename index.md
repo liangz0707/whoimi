@@ -64,7 +64,9 @@ TODO: MVP矩阵变换、透视变换、视口变换
 
 [BRDF基础原理与推导](blogs/RTR/表面反射模型.md) 
 
-TODO：BRDF常用模型与应用
+[BRDF常用高光数学模型：G、F、D](blogs/RTR/BRDFSpecular.md)
+
+TODO:Unity HDRP当中的光照模型
 
 [TODO:shell模型实现毛发渲染](blogs/RTR/毛发方案分析.md) 
 
