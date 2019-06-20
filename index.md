@@ -1,16 +1,4 @@
-## gallery
-
-[gallery:从模型到打光流程](gallerys/gallery.md)
-
-[gallery:Unity24小时基于物理的光照效果](gallerys/unity24h.md)
-
-[gallery:在Unity中实现的《Horizon: Zero Dawn》体积云](gallerys/volumecloud.md)
-
-[gallery:Noise](gallerys/noisework.md)
-
-gallery:SDF在polygon渲染当中的应用探索
-
-## Unity常见问题
+## Unity Issue
 
 [Unity Surface Shader阴影相关宏的说明](blogs/unity/fullforwardshadows.md)
 
@@ -40,23 +28,17 @@ gallery:SDF在polygon渲染当中的应用探索
 
 [UV云被远剪裁面Clip以及Shadow被近剪裁面Clip](blogs/unity/UV云被裁减问题.md)
 
-## SDF与RayCasting
-
-TODO: Unity SRP实现SDF渲染框架
-
-## 数学相关
+## Math
 
 TODO: 蒙特卡洛积分理论
 
-TODO: MVP矩阵变换、透视变换、视口变换
+TODO: MVP矩阵变换、透视变换、视口变换详解
 
-## 实时渲染相关
+## Real Time Rendering
 
 [Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
 
 [体积云光照部分相关理论](blogs/RTR/体积云.md)
-
-[Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
 
 [法线空间转换的问题与解决方案推导](blogs/RTR/法线空间转换.md)
 
@@ -68,9 +50,25 @@ TODO: MVP矩阵变换、透视变换、视口变换
 
 TODO:Unity HDRP当中的光照模型
 
+## Unity Effect
+
+[Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
+
+[修改UnityHDRP管线来实现怪物猎人世界中宠物毛发效果](blogs/UnityEffect/修改UnityHDRP管线来实现怪物猎人世界中宠物毛发效果.md)
+
 [TODO:shell模型实现毛发渲染](blogs/RTR/毛发方案分析.md) 
 
-## Unity 后处理
+[在Unity中实现的《Horizon: Zero Dawn》体积云](gallerys/volumecloud.md)
+
+[噪声与布朗分型的效果探索](gallerys/noisework.md)
+
+TODO: SDF在polygon渲染当中的应用探索
+
+## SDF & RayCasting
+
+TODO: Unity SRP实现SDF渲染框架
+
+## Unity PostProcessiong
 
 [PostProcessing V3](blogs/post/PostprocessingV3.md)
 
@@ -94,9 +92,13 @@ TODO:Unity HDRP当中的光照模型
 
 [法线贴图旋转](blogs/HDRPartist/法线贴图旋转.md)
 
+[从模型到打光流程](gallerys/gallery.md)
+
+[Unity24小时基于物理的光照效果](gallerys/unity24h.md)
+
 [TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
-## Unity HDRP 代码阅读
+## Unity HDRP Source Code
 
 下面这部分是HDRP6.*版本的内容。
 
