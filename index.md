@@ -28,12 +28,6 @@
 
 [UV云被远剪裁面Clip以及Shadow被近剪裁面Clip](blogs/unity/UV云被裁减问题.md)
 
-## Math
-
-TODO: 蒙特卡洛积分理论
-
-TODO: MVP矩阵变换、透视变换、视口变换详解
-
 ## Real Time Rendering
 
 [Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
@@ -48,7 +42,9 @@ TODO: MVP矩阵变换、透视变换、视口变换详解
 
 [BRDF常用高光数学模型：G、F、D](blogs/RTR/BRDFSpecular.md)
 
-TODO:Unity HDRP当中的光照模型
+TODO: Unity HDRP当中的特殊光照模型
+
+TODO: 蒙特卡洛积分理论
 
 ## Unity Effect
 
@@ -66,7 +62,9 @@ TODO: SDF在polygon渲染当中的应用探索
 
 ## SDF & RayCasting
 
-TODO: Unity SRP实现SDF渲染框架
+[Unity SRP实现SDF渲染基础框架](blogs/SDF/SDFRenderFrameWork.md)
+
+TODO: SDF模型纹理
 
 ## Unity PostProcessiong
 
