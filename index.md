@@ -58,7 +58,7 @@ TODO: 蒙特卡洛积分理论
 
 [噪声与布朗分型的效果探索](gallerys/noisework.md)
 
-TODO: SDF在polygon渲染当中的应用探索
+[SDF在unity渲染当中的应用探索](blogs/UnityEffect/在Polygon渲染当中使用SDF效果.md)
 
 ## SDF & RayCasting
 
