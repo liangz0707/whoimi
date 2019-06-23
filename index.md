@@ -94,6 +94,8 @@ TODO: SDF模型纹理
 
 [Unity24小时基于物理的光照效果](gallerys/unity24h.md)
 
+[米哈游原神细节实现猜测.md](blogs/GameAnalysis/米哈游原神细节实现猜测.md)
+
 [TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
 ## Unity HDRP Source Code
