@@ -28,6 +28,8 @@
 
 [UV云被远剪裁面Clip以及Shadow被近剪裁面Clip](blogs/unity/UV云被裁减问题.md)
 
+[HDRP中ShaderGraph生成的UnlitTransparent不接受雾](blogs/unity/HDRP中ShaderGraph生成的UnlitTransparent不接受雾.md)
+
 ## Real Time Rendering
 
 [Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
