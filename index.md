@@ -1,3 +1,13 @@
+# ===== English Part=====
+
+
+
+
+
+
+
+# ===== Chinese Part=====
+
 ## Unity Issue
 
 [Unity Surface Shader阴影相关宏的说明](blogs/unity/fullforwardshadows.md)
@@ -29,6 +39,12 @@
 [UV云被远剪裁面Clip以及Shadow被近剪裁面Clip](blogs/unity/UV云被裁减问题.md)
 
 [HDRP中ShaderGraph生成的UnlitTransparent不接受雾](blogs/unity/HDRP中ShaderGraph生成的UnlitTransparent不接受雾.md)
+
+[Unity贴图压缩](blogs/unity/Unity贴图压缩.md)
+
+[Houdini无法导出fbx格式的UV.z通道](blogs/unity/Houdini导出fbxUVz通道.md)
+
+[UnityTextureStreaming](blogs/unity/UnityTextureStreaming.md)
 
 ## Real Time Rendering
 
@@ -169,6 +185,8 @@ TODO: 通过PS4开发机+Razor详细分析硬件架构与渲染过程
 ## 我的动态
 
 [LearningRoadMap](LearningRoadMap.md)
+
+[2019/7/8] 研究UE4，博客转入全英文
 
 [2019/6/15] SDF渲染。
 

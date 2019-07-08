@@ -1,6 +1,6 @@
 # PostProcessing V3版本的代码结构
 
-Hdrp目前使用了PostV3版本，即将抛弃postV3，这里总结一下PostprocessingV3的基本代码结构。
+Hdrp目前使用了PostV3版本，即将抛弃postV2，这里总结一下PostprocessingV3的基本代码结构。
 
 PostV3是直接集成在HDRP当中的不需要在单独使用一个Package。
 
@@ -225,7 +225,7 @@ if (m_PostProcessEnabled)
 
 后处理的过程大体如上，现在详细看一下Bloom效果。
 
-下面是Bloom部分的代码texan：
+下面是Bloom部分的代码：
 
 ```c
 bool bloomActive = m_Bloom.IsActive();
