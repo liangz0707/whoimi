@@ -114,6 +114,8 @@ TODO: SDF模型纹理
 
 [米哈游原神细节实现猜测.md](blogs/GameAnalysis/米哈游原神细节实现猜测.md)
 
+[HDRP场景反射](blogs/HDRPartist/场景反射策略.md)
+
 [TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
 ## Unity HDRP Source Code
