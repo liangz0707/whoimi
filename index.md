@@ -1,12 +1,22 @@
 # ===== English Part=====
 
+[UE4_Performance_Bottlenecks](blogs/UE4/UE4_Performance_Bottlenecks.md) 
 
+
+
+# ===== Art Part =====
 
 
 
 
 
 # ===== Chinese Part=====
+
+## UE4
+
+[UE4基础光照模型](blogs/UE4/ue4光照模型.md) 在重要度采样和IBL计算部分有待补充
+
+
 
 ## Unity Issue
 
@@ -187,6 +197,10 @@ TODO: 通过PS4开发机+Razor详细分析硬件架构与渲染过程
 ## 我的动态
 
 [LearningRoadMap](LearningRoadMap.md)
+
+
+
+[2019/7/10] 研究美术相关内容：色彩、程序化建模、建模、程序化纹理。
 
 [2019/7/8] 研究UE4，博客转入全英文
 
