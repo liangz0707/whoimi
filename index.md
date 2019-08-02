@@ -8,8 +8,6 @@
 
 
 
-
-
 # ===== Chinese Part=====
 
 ## UE4
@@ -20,7 +18,7 @@
 
 [UE4渲染源码基础Pipeline](blogs/UE4RenderingSource/UE4渲染源码基础Pipeline.md)
 
-[UE4渲染源码基础结构.md](blogs/UE4RenderingSource/UE4渲染源码基础结构.md)
+[UE4渲染源码基础结构](blogs/UE4RenderingSource/UE4渲染源码基础结构.md)
 
 ## Unity Issue
 
@@ -74,9 +72,9 @@
 
 [BRDF常用高光数学模型：G、F、D](blogs/RTR/BRDFSpecular.md)
 
-TODO: Unity HDRP当中的特殊光照模型
-
 TODO: 蒙特卡洛积分理论
+
+TODO:重要度采样理论
 
 ## Unity Effect
 
@@ -96,7 +94,7 @@ TODO: 蒙特卡洛积分理论
 
 [Unity SRP实现SDF渲染基础框架](blogs/SDF/SDFRenderFrameWork.md)
 
-TODO: SDF模型纹理
+TODO: SDF Shadow
 
 ## Unity PostProcessiong
 
@@ -186,8 +184,6 @@ TODO: SDF模型纹理
 
 [手机图形架构浅析与优化](blogs/GPUAartch/手机GPU架构与优化.md)
 
-TODO: 通过PS4开发机+Razor详细分析硬件架构与渲染过程
-
 ## 杂项
 
 [游戏行业](blogs/game/game_index.md)
@@ -202,11 +198,11 @@ TODO: 通过PS4开发机+Razor详细分析硬件架构与渲染过程
 
 [LearningRoadMap](LearningRoadMap.md)
 
+欢迎对渲染、色彩、各种炫酷效果感兴趣的美术、程序、TA加我微信交流：Codegoooo
 
+[2019/7/10] 研究美术相关内容：色彩、灯光、程序化建模、建模、程序化纹理。
 
-[2019/7/10] 研究美术相关内容：色彩、程序化建模、建模、程序化纹理。
-
-[2019/7/8] 研究UE4，博客转入全英文
+[2019/7/8] 研究UE4，Rendering部分源代码，研究UE4渲染和图形模块功能
 
 [2019/6/15] SDF渲染。
 
