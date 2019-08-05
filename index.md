@@ -6,7 +6,7 @@
 
 # ===== Art Part =====
 
-
+[BRDF与色彩与明暗](blogs/Art/BRDF与色彩与明暗.md)
 
 # ===== Chinese Part=====
 
