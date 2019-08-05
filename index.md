@@ -72,7 +72,7 @@
 
 [BRDF常用高光数学模型：G、F、D](blogs/RTR/BRDFSpecular.md)
 
-TODO: 蒙特卡洛积分理论
+[蒙特卡洛积分理论](blogs/RTR/蒙特卡洛方法.md)
 
 TODO:重要度采样理论
 
