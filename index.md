@@ -12,7 +12,7 @@
 
 ## UE4
 
-[UE4基础光照模型](blogs/UE4/ue4光照模型.md) 在重要度采样和IBL计算部分有待补充
+[UE4基础光照模型](blogs/UE4/ue4光照模型.md) 
 
 ## UE4渲染源代码阅读
 
@@ -74,7 +74,7 @@
 
 [蒙特卡洛积分理论](blogs/RTR/蒙特卡洛方法.md)
 
-TODO:重要度采样理论
+[重要度采样理论](blogs/RTR/重要度采样.md) 待完善
 
 ## Unity Effect
 
