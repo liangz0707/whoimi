@@ -2,6 +2,8 @@
 
 [UE4_Performance_Bottlenecks](blogs/UE4/UE4_Performance_Bottlenecks.md) 
 
+[Building Better 3D Meshes and Textures](blogs/UE4/Building_Better_3D_Meshes_and_Textures.md) 
+
 
 
 # ===== Art Part =====
