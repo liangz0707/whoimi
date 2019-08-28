@@ -78,6 +78,8 @@
 
 [重要度采样理论](blogs/RTR/重要度采样.md) 待完善
 
+[Gamma矫正](blogs/RTR/Gamma矫正.md) 
+
 ## Unity Effect
 
 [Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
