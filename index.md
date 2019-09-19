@@ -80,6 +80,8 @@
 
 [Gamma矫正](blogs/RTR/Gamma矫正.md) 
 
+[Early Z](blogs/RTR/EarlyZ.md)
+
 ## Unity Effect
 
 [Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
@@ -203,6 +205,14 @@ TODO: SDF Shadow
 [LearningRoadMap](LearningRoadMap.md)
 
 欢迎对渲染、色彩、各种炫酷效果感兴趣的美术、程序、TA加我微信交流：Codegoooo
+
+[2019/9/06] 常用的3D模型文件格式与特性, 动作文件格式与特性，图片格式特性，图片压缩格式特性。主要用于之后了解mesh合并、LOD生成、动作优化、纹理处理以及纹理Atlas生成。
+
+[2019/9/01] 学习Vulkan，从底层了解图像渲染接口。
+
+[2019/8/26] 进入新公司学习自研引擎。
+
+[2019/8/10] 学习手绘二次元角色。
 
 [2019/7/10] 研究美术相关内容：色彩、灯光、程序化建模、建模、程序化纹理。
 
