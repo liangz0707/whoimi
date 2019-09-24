@@ -64,6 +64,8 @@
 
 [Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
 
+[HDR与ToneMapping理论](blogs/RTR/HDR与ToneMapping理论.md)
+
 [体积云光照部分相关理论](blogs/RTR/体积云.md)
 
 [法线空间转换的问题与解决方案推导](blogs/RTR/法线空间转换.md)
@@ -77,6 +79,10 @@
 [蒙特卡洛积分理论](blogs/RTR/蒙特卡洛方法.md)
 
 [重要度采样理论](blogs/RTR/重要度采样.md) 待完善
+
+[IBL光照理论与应用](blogs/RTR/IBL光照理论与应用.md) 待完善
+
+[球面谐波理论与应用](blogs/RTR/球面谐波理论与应用.md) 待完善
 
 [Gamma矫正](blogs/RTR/Gamma矫正.md) 
 
