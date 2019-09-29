@@ -190,6 +190,8 @@ TODO: SDF Shadow
 
 [GPU分支语句性能](blogs/GPUAartch/GPU分支语句性能.md)
 
+[关于Cuda、Shader中if语句执行原理](blogs/GPUAartch/关于Cuda、Shader中if语句执行原理.md)
+
 [GPU架构类型整合](blogs/GPUAartch/GPU架构类型整合.md)
 
 [TeraScale架构浅析](blogs/GPUAartch/TeraScale架构浅析.md)
