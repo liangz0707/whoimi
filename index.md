@@ -4,8 +4,6 @@
 
 [Building Better 3D Meshes and Textures](blogs/UE4/Building_Better_3D_Meshes_and_Textures.md) 
 
-
-
 # ===== Art Part =====
 
 [BRDF与色彩与明暗](blogs/Art/BRDF与色彩与明暗.md)
@@ -61,6 +59,8 @@
 [UnityTextureStreaming](blogs/unity/UnityTextureStreaming.md)
 
 ## Real Time Rendering
+
+[主机渲染和优化技术概要](blogs/RTR/主机渲染和优化技术概要.md) 
 
 [Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
 
