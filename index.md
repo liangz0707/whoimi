@@ -120,6 +120,8 @@ TODO: SDF Shadow
 
 ## Unity for Artist
 
+[CubeMap生成与使用](blogs/HDRPartist/CubeMap生成.md)
+
 [HDRP基础Shader](blogs/HDRPartist/HDRP基础Shader.md)
 
 [Shader Graph](blogs/HDRPartist/Shader Graph.md)

@@ -242,9 +242,12 @@ float3 SpecularIBL( float3 SpecularColor , float Roughness , float3 N, float3 V 
             // pdf = D * NoH / (4 * VoH) xi对应的概率
             // SpecularLighting =  D*G*F / (4*NoL*NoV) /  (pdf)
             // SpecularLighting = NoL* D*G*F / (4*NoL*NoV) * (4 * VoH)  / D * NoH
+            // 这里pdf是1所以公式变为 G*F / (4*NoL*NoV)，约分之后得到下面的公式
+            // 也就是说P等于1
             SpecularLighting += SampleColor * F * G * VoH / (NoH * NoV);
         }
     }
+    // 取平均值
     return SpecularLighting / NumSamples;
 }
 ```
