@@ -186,6 +186,10 @@ TODO: SDF Shadow
 
 [HDRP中HairShader代码结构2](blogs/unity/HDRP中HairShader代码结构2.md)
 
+## Shader
+
+[Shader函数重载的问题](blogs/Shader/Shader函数重载的问题.md) 
+
 ## GPU
 
 [GPU架构基础](blogs/GPUAartch/GPU架构.md)
