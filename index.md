@@ -6,7 +6,7 @@
 
 # ===== Art Part =====
 
-[BRDF与色彩与明暗](blogs/Art/BRDF与色彩与明暗.md)
+
 
 # ===== Chinese Part=====
 
@@ -118,7 +118,11 @@ TODO: SDF Shadow
 
 [ColorGrading介绍](blogs/post/ColorGrading.md)
 
-## Unity for Artist
+## Artist Part
+
+[材质制作数值标准总结](blogs/Art/材质制作数值标准总结.md)
+
+[BRDF与色彩与明暗](blogs/Art/BRDF与色彩与明暗.md)
 
 [CubeMap生成与使用](blogs/HDRPartist/CubeMap生成.md)
 
