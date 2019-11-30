@@ -1,3 +1,5 @@
+
+
 # ===== English Part=====
 
 [UE4_Performance_Bottlenecks](blogs/UE4/UE4_Performance_Bottlenecks.md) 
@@ -6,7 +8,39 @@
 
 # ===== Chinese Part=====
 
-## UE4
+## Real Time Rendering
+
+[主机渲染和优化技术概要](blogs/RTR/主机渲染和优化技术概要.md) 
+
+[Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
+
+[HDR与ToneMapping理论](blogs/RTR/HDR与ToneMapping理论.md)
+
+[体积云光照部分相关理论](blogs/RTR/体积云.md)
+
+[法线空间转换的问题与解决方案推导](blogs/RTR/法线空间转换.md)
+
+[渲染管线](blogs/RTR/渲染管线.md) 
+
+[BRDF基础原理与推导](blogs/RTR/表面反射模型.md) 
+
+[BRDF常用高光数学模型：G、F、D](blogs/RTR/BRDFSpecular.md)
+
+[蒙特卡洛积分理论](blogs/RTR/蒙特卡洛方法.md)
+
+[重要度采样理论](blogs/RTR/重要度采样.md) 
+
+[IBL光照理论与应用](blogs/RTR/IBL光照理论与应用.md) 
+
+[球面谐波理论与应用](blogs/RTR/球面谐波理论与应用.md) 待完善
+
+[Gamma矫正](blogs/RTR/Gamma矫正.md) 
+
+[Early Z](blogs/RTR/EarlyZ.md)
+
+[手机Tiled-BasedRender和GPU带宽](blogs/RTR/手机Tiled-BasedRender和GPU带宽.md)
+
+## UE4 使用经验
 
 [UE4基础光照模型](blogs/UE4/ue4光照模型.md) 
 
@@ -16,7 +50,7 @@
 
 [UE4渲染源码基础结构](blogs/UE4RenderingSource/UE4渲染源码基础结构.md)
 
-## Unity Issue
+## Unity使用经验
 
 [Unity Surface Shader阴影相关宏的说明](blogs/unity/fullforwardshadows.md)
 
@@ -54,39 +88,7 @@
 
 [UnityTextureStreaming](blogs/unity/UnityTextureStreaming.md)
 
-## Real Time Rendering
-
-[主机渲染和优化技术概要](blogs/RTR/主机渲染和优化技术概要.md) 
-
-[Temporal Anti-Aliasing原理与Unity实现](blogs/RTR/TAA.md)
-
-[HDR与ToneMapping理论](blogs/RTR/HDR与ToneMapping理论.md)
-
-[体积云光照部分相关理论](blogs/RTR/体积云.md)
-
-[法线空间转换的问题与解决方案推导](blogs/RTR/法线空间转换.md)
-
-[渲染管线](blogs/RTR/渲染管线.md) 
-
-[BRDF基础原理与推导](blogs/RTR/表面反射模型.md) 
-
-[BRDF常用高光数学模型：G、F、D](blogs/RTR/BRDFSpecular.md)
-
-[蒙特卡洛积分理论](blogs/RTR/蒙特卡洛方法.md)
-
-[重要度采样理论](blogs/RTR/重要度采样.md) 
-
-[IBL光照理论与应用](blogs/RTR/IBL光照理论与应用.md) 
-
-[球面谐波理论与应用](blogs/RTR/球面谐波理论与应用.md) 待完善
-
-[Gamma矫正](blogs/RTR/Gamma矫正.md) 
-
-[Early Z](blogs/RTR/EarlyZ.md)
-
-[手机Tiled-BasedRender和GPU带宽](blogs/RTR/手机Tiled-BasedRender和GPU带宽.md)
-
-## Unity Effect
+## Unity 渲染效果
 
 [Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
 
@@ -100,23 +102,19 @@
 
 [SDF在unity渲染当中的应用探索](blogs/UnityEffect/在Polygon渲染当中使用SDF效果.md)
 
-## SDF & RayCasting
-
-[Unity SRP实现SDF渲染基础框架](blogs/SDF/SDFRenderFrameWork.md)
-
-TODO: SDF Shadow
-
-## Unity PostProcessiong
-
 [PostProcessing V3](blogs/post/PostprocessingV3.md)
 
 [PPV3 HDRP自定义后处理](blogs/post/HDRP自定义后处理.md)
 
 [ColorGrading介绍](blogs/post/ColorGrading.md)
 
-## Artist Part
+[Unity SRP实现SDF渲染基础框架](blogs/SDF/SDFRenderFrameWork.md)
+
+## 美术制作方案
 
 [材质制作数值标准总结](blogs/Art/材质制作数值标准总结.md)
+
+[材质制作参数F0](blogs/Art/材质制作参数F0.md)
 
 [BRDF与色彩与明暗](blogs/Art/BRDF与色彩与明暗.md)
 
@@ -144,9 +142,7 @@ TODO: SDF Shadow
 
 [HDRP场景反射](blogs/HDRPartist/场景反射策略.md)
 
-[TA工作内容](blogs/HDRPartist/TA工作内容.md)
-
-## Unity HDRP Source Code
+## Unity HDRP 源代码阅读
 
 下面这部分是HDRP6.*版本的内容。
 
@@ -186,11 +182,11 @@ TODO: SDF Shadow
 
 [HDRP中HairShader代码结构2](blogs/unity/HDRP中HairShader代码结构2.md)
 
-## Shader
+## Shader 编程
 
 [Shader函数重载的问题](blogs/Shader/Shader函数重载的问题.md) 
 
-## GPU
+## GPU硬件及架构相关
 
 [纹理缓存](blogs/GPUAartch/纹理缓存.md)
 
@@ -209,6 +205,8 @@ TODO: SDF Shadow
 [手机图形架构浅析与优化](blogs/GPUAartch/手机GPU架构与优化.md)
 
 ## 杂项
+
+[TA工作内容](blogs/HDRPartist/TA工作内容.md)
 
 [游戏行业](blogs/game/game_index.md)
 

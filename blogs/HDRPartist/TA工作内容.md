@@ -1,6 +1,6 @@
-## 性能优化：
+## 算法性能优化：
 
-* BRDF 计算优化： GGX : F \Geometry\NDF。(手游上比较重要)
+* BRDF 计算优化： GGX : F \Geometry\NDF\IBL等。(手游上比较重要)
 * Texture Atlasing 工具：PBR贴图Pack在一起，合成一个大的贴图，Shader种类必须特别小。
 * IBL cubemap Normalization：看一下战神的PBR（主要改进的是效果）
 
@@ -21,8 +21,6 @@
 * 把工具嵌入在流程当中。
 * 定制的SP环境：定制Shader和定制后处理。
 
-
-
 ## Shader相关：
 
 * Shader Strip 工具。
@@ -32,7 +30,7 @@
 
 
 
-## TA工作方向
+## TA工作内容分类
 
 程序化生成：包括地形、材质、贴图、模型、特效的程序化建模。
 
