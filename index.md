@@ -204,6 +204,8 @@
 
 ## GPU硬件及架构相关
 
+[手游GPU架构与优化之UnifiedShaderCore](blogs/GPUAartch/手游GPU架构与优化之UnifiedShaderCore.md)
+
 [纹理缓存](blogs/GPUAartch/纹理缓存.md)
 
 [GPU架构基础](blogs/GPUAartch/GPU架构.md)
