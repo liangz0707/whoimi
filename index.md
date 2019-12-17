@@ -1,17 +1,30 @@
-目录：
+
 [===== English Part=====](#-english-part)
+
 [===== Chinese Part=====](#-chinese-part)
+
      [Real Time Rendering](#real-time-rendering)
+     
      [UE4 使用经验](#ue4-使用经验)
+     
      [UE4渲染源代码阅读](#ue4渲染源代码阅读)
+     
      [Unity使用经验](#unity使用经验)
+     
      [Unity 渲染效果](#unity-渲染效果)
+     
      [美术制作方案](#美术制作方案)
+     
      [Unity HDRP 源代码阅读](#unity-hdrp-源代码阅读)
+     
      [Shader 编程](#shader-编程)
+     
      [GPU硬件及架构相关](#gpu硬件及架构相关)
+     
      [杂项](#杂项)
+     
      [我的动态](#我的动态)
+     
 
 
 # ===== English Part=====
@@ -201,6 +214,10 @@
 ## Shader 编程
 
 [Shader函数重载的问题](blogs/Shader/Shader函数重载的问题.md) 
+
+[不同图形API矩阵行列主序及其影响](blogs/Shader/不同图形API矩阵行列主序及其影响.md) 
+
+[ShaderModel与ES版本和GPU特性的关系](blogs/Shader/ShaderModel与ES版本和GPU特性的关系.md) 
 
 ## GPU硬件及架构相关
 
