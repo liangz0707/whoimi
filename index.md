@@ -3,29 +3,27 @@
 
 [===== Chinese Part=====](#-chinese-part)
 
-     [Real Time Rendering](#real-time-rendering)
-     
-     [UE4 使用经验](#ue4-使用经验)
-     
-     [UE4渲染源代码阅读](#ue4渲染源代码阅读)
-     
-     [Unity使用经验](#unity使用经验)
-     
-     [Unity 渲染效果](#unity-渲染效果)
-     
-     [美术制作方案](#美术制作方案)
-     
-     [Unity HDRP 源代码阅读](#unity-hdrp-源代码阅读)
-     
-     [Shader 编程](#shader-编程)
-     
-     [GPU硬件及架构相关](#gpu硬件及架构相关)
-     
-     [杂项](#杂项)
-     
-     [我的动态](#我的动态)
-     
+ [Real Time Rendering](#real-time-rendering)
 
+ [UE4 使用经验](#ue4-使用经验)
+
+ [UE4渲染源代码阅读](#ue4渲染源代码阅读)
+
+ [Unity使用经验](#unity使用经验)
+
+ [Unity 渲染效果](#unity-渲染效果)
+
+ [美术制作方案](#美术制作方案)
+
+ [Unity HDRP 源代码阅读](#unity-hdrp-源代码阅读)
+
+ [Shader 编程](#shader-编程)
+
+ [GPU硬件及架构相关](#gpu硬件及架构相关)
+
+ [杂项](#杂项)
+
+ [我的动态](#我的动态)
 
 # ===== English Part=====
 
@@ -68,6 +66,8 @@
 [手机Tiled-BasedRender和GPU带宽](blogs/RTR/手机Tiled-BasedRender和GPU带宽.md)
 
 [不同图形API剪裁空间说明](blogs/RTR/不同图形API剪裁空间说明.md)
+
+[LOD计算策略](blogs/RTR/LOD策略.md)
 
 ## UE4 使用经验
 
