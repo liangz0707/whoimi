@@ -1,3 +1,22 @@
+<!-- TOC -->
+
+- [GPU渲染优化技术:Inside Geometry Instancing](#gpu渲染优化技术inside-geometry-instancing)
+    - [简介](#简介)
+    - [Why Geometry Instancing?](#why-geometry-instancing)
+    - [Definitions](#definitions)
+        - [Geometry Packet](#geometry-packet)
+        - [Instance Attributes](#instance-attributes)
+        - [Geometry Instance](#geometry-instance)
+        - [Render and Texture Context](#render-and-texture-context)
+        - [Geometry Batch](#geometry-batch)
+    - [Implementation](#implementation)
+        - [Static Batching](#static-batching)
+        - [Dynamic Batching](#dynamic-batching)
+        - [Vertex Constants Instancing](#vertex-constants-instancing)
+        - [Batching with the Geometry Instancing API](#batching-with-the-geometry-instancing-api)
+
+<!-- /TOC -->
+
 # GPU渲染优化技术:Inside Geometry Instancing
 
 ## 简介
