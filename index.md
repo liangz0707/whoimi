@@ -119,6 +119,14 @@
 
 [UnityTextureStreaming](blogs/unity/UnityTextureStreaming.md)
 
+## 图形API
+
+[Vulkan Shader编译与加载过程](blogs/GraphicAPI/Vulkan_Shader编译与加载过程.md)  待补充Shader变种
+
+## 资源管理
+
+[FBX文件格式](blogs/3DBasic/FBXFileFormat.md)
+
 ## Unity 渲染效果
 
 [Unity中实现Depth Peeling](blogs/RTR/DepthPeeling.md)
