@@ -223,6 +223,8 @@
 
 ## Shader 编程
 
+[GPU浮点数的精确度注意事项](blogs/Shader/渲染过程中各种浮点数的精确度.md) 
+
 [Shader函数重载的问题](blogs/Shader/Shader函数重载的问题.md) 
 
 [不同图形API矩阵行列主序及其影响](blogs/Shader/不同图形API矩阵行列主序及其影响.md) 
