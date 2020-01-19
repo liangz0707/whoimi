@@ -35,7 +35,9 @@
 
 ## Real Time Rendering
 
-[GPU渲染优化技术:Inside Geometry Instancing](blogs/RTR/GPU渲染优化技术Inside_Geometry_Instancing.md) 
+[【精】图像动态范围](blogs/RTR/图像动态范围.md) ：游戏中，Gamma矫正来源、tonemapping来源与动态范围的正确解释。
+
+【精】[GPU渲染优化技术:Inside Geometry Instancing](blogs/RTR/GPU渲染优化技术Inside_Geometry_Instancing.md) 
 
 [主机渲染和优化技术概要](blogs/RTR/主机渲染和优化技术概要.md) 
 
