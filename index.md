@@ -225,7 +225,7 @@
 
 ## Shader 编程
 
-[GPU浮点数的精确度注意事项](blogs/Shader/渲染过程中各种浮点数的精确度.md) 
+[GPU浮点数的精确度注意事项](blogs/Shader/渲染过程中各种浮点数的精确度.md) 从R11G11B10的格式出发，解释图像精确度的原理
 
 [Shader函数重载的问题](blogs/Shader/Shader函数重载的问题.md) 
 
