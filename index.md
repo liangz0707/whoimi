@@ -79,9 +79,21 @@
 
 ## UE4渲染源代码阅读
 
+下面两个学习笔记没什么章法，回头看很混乱、不深入，所以尝试换一个角度重新整理
+
 [UE4渲染源码基础Pipeline](blogs/UE4RenderingSource/UE4渲染源码基础Pipeline.md)
 
 [UE4渲染源码基础结构](blogs/UE4RenderingSource/UE4渲染源码基础结构.md)
+
+UE4代码学习：
+
+[[UE代码学习]初探UE4代码层](blogs/UE4RenderingSource/[UE代码学习]初探UE4代码层.md)
+
+[[UE代码学习]UE4Shader代码初探](blogs/UE4RenderingSource/[UE代码学习]UE4Shader代码初探.md)
+
+[[UE代码学习]UE4渲染管线代码初探](blogs/UE4RenderingSource/[UE代码学习]UE4渲染管线代码初探.md) 正在学习
+
+
 
 ## Unity使用经验
 
@@ -124,6 +136,8 @@
 ## 图形API
 
 [Vulkan Shader编译与加载过程](blogs/GraphicAPI/Vulkan_Shader编译与加载过程.md)  待补充Shader变种
+
+[Vulkan-A-Specification中文摘录](blogs/VulkanTranslate/Vulkan-A-Specification中文翻译版.md)  
 
 ## 资源管理
 
