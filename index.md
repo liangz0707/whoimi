@@ -249,6 +249,8 @@ UE4代码学习：
 
 ## GPU硬件及架构相关
 
+[【重要】谈谈那些early depth testing技术](blogs/GPUAartch/谈谈那些early_depth_testing技术.md) （草拟）
+
 [手游GPU架构与优化之UnifiedShaderCore](blogs/GPUAartch/手游GPU架构与优化之UnifiedShaderCore.md)
 
 [纹理缓存](blogs/GPUAartch/纹理缓存.md)
