@@ -161,11 +161,15 @@ UE4代码学习：
 
 [PPV3 HDRP自定义后处理](blogs/post/HDRP自定义后处理.md)
 
-[ColorGrading介绍](blogs/post/ColorGrading.md)
+[ColorGrading介绍](blogs/post/ColorGrading.md)  （入门级的ColorGrading简单介绍）
 
 [Unity SRP实现SDF渲染基础框架](blogs/SDF/SDFRenderFrameWork.md)
 
 ## 美术制作方案
+
+[后处理ColorGrading](blogs/Art/后处理ColorGrading.md) （中级的ColorGrading说明）
+
+HDR ColorGrading技术方案（高级的ColorGrading和HDR后期处理技术方案）
 
 [材质制作数值标准总结](blogs/Art/材质制作数值标准总结.md)
 
