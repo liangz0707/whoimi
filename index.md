@@ -77,6 +77,8 @@
 
 [UE4基础光照模型](blogs/UE4/ue4光照模型.md) 
 
+[UE4 Lightmap结构和编码](blogs/UE4/UnrealLightmap结构和编码.md) 
+
 ## UE4渲染源代码阅读
 
 下面两个学习笔记没什么章法，回头看很混乱、不深入，所以尝试换一个角度重新整理
@@ -92,8 +94,6 @@ UE4代码学习：
 [[UE代码学习]UE4Shader代码初探](blogs/UE4RenderingSource/[UE代码学习]UE4Shader代码初探.md)
 
 [[UE代码学习]UE4渲染管线代码初探](blogs/UE4RenderingSource/[UE代码学习]UE4渲染管线代码初探.md) 正在学习
-
-
 
 ## Unity使用经验
 
@@ -169,7 +169,9 @@ UE4代码学习：
 
 [后处理ColorGrading](blogs/Art/后处理ColorGrading.md) （中级的ColorGrading说明）
 
-HDR ColorGrading技术方案（高级的ColorGrading和HDR后期处理技术方案）
+[HDR ColorGrading技术方案](blogs/Art/HDRColorGrading技术方案.md)（高级的ColorGrading和HDR后期处理技术方案）
+
+[ColorGrading中LUT的生成与使用](blogs/Art/ColorGrading中LUT的生成与使用.md)
 
 [材质制作数值标准总结](blogs/Art/材质制作数值标准总结.md)
 
@@ -254,6 +256,8 @@ HDR ColorGrading技术方案（高级的ColorGrading和HDR后期处理技术方�
 ## GPU硬件及架构相关
 
 [【重要】谈谈那些early depth testing技术](blogs/GPUAartch/谈谈那些early_depth_testing技术.md) （草拟）
+
+[HDR硬件层Framebuffer格式标准与渲染阶段的关系](blogs/GPUAartch/HDR硬件层Framebuffer格式标准与渲染阶段的关系.md)
 
 [手游GPU架构与优化之UnifiedShaderCore](blogs/GPUAartch/手游GPU架构与优化之UnifiedShaderCore.md)
 
