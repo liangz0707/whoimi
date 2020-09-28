@@ -37,6 +37,8 @@
 
 [【精】图像动态范围](blogs/RTR/图像动态范围.md) ：游戏中，Gamma矫正来源、tonemapping来源与动态范围的正确解释。
 
+[大气散射](blogs/RTR/大气散射.md) 
+
 [【精】GPU渲染优化技术:Inside Geometry Instancing](blogs/RTR/GPU渲染优化技术Inside_Geometry_Instancing.md) 
 
 [主机渲染和优化技术概要](blogs/RTR/主机渲染和优化技术概要.md) 
@@ -167,6 +169,10 @@ UE4代码学习：
 
 ## 美术制作方案
 
+[色彩表示的前世今生](blogs/Art/色彩表示的前世今生.md)
+
+[常见颜色风格](blogs/Art/颜色风格.md)
+
 [后处理ColorGrading](blogs/Art/后处理ColorGrading.md) （中级的ColorGrading说明）
 
 [HDR ColorGrading技术方案](blogs/Art/HDRColorGrading技术方案.md)（高级的ColorGrading和HDR后期处理技术方案）
@@ -202,6 +208,10 @@ UE4代码学习：
 [米哈游原神细节实现猜测.md](blogs/GameAnalysis/米哈游原神细节实现猜测.md)
 
 [HDRP场景反射](blogs/HDRPartist/场景反射策略.md)
+
+## 论文摘录
+
+[【TVCG】 More Efﬁcient Virtual Shadow Maps for Many Lights](blogs/Paper/ClusterShadows.md)
 
 ## Unity HDRP 源代码阅读
 
@@ -254,6 +264,8 @@ UE4代码学习：
 [ShaderModel与ES版本和GPU特性的关系](blogs/Shader/ShaderModel与ES版本和GPU特性的关系.md) 
 
 ## GPU硬件及架构相关
+
+[一个三角形在GPU中的一生](blogs/GPUAartch/一个三角形在GPU中的一生.md) (部分)
 
 [【重要】谈谈那些early depth testing技术](blogs/GPUAartch/谈谈那些early_depth_testing技术.md) （草拟）
 
