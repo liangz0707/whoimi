@@ -289,6 +289,8 @@ UE4代码学习：
 
 [手机图形架构浅析与优化](blogs/GPUAartch/手机GPU架构与优化.md)
 
+[Partial_Derivatives(DDX)原理与设备实现差异](blogs/GPUAartch/Partial_Derivatives(DDX)原理与设备实现差异.md)
+
 ## 杂项
 
 [TA工作内容](blogs/HDRPartist/TA工作内容.md)
